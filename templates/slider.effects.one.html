@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!-- Hide notice in IE -->
+<!-- saved from url=(0014)about:internet -->
+
+<!--[if IE 7]> <html class="ie ie7"> <![endif]-->
+<!--[if IE 8]> <html class="ie ie8"> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]> <html> <![endif]-->
+<head>
+
+    <!-- Page Infomations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="one of the best tabs plugins">
+    <meta name="author" content="codetabs - thystudio - Nguyen Van Thy">
+    
+    <!-- Title of page -->
+    <title>ONE EFFECTS | CODETABS B+</title>
+
+    <!-- Favicon & apple-icon -->
+    <link rel="shortcut icon" href="../libs/imgs/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../libs/imgs/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../libs/imgs/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../libs/imgs/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../libs/imgs/icons/apple-touch-icon-144x144.png">
+
+    
+    <!-- CSS link -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../code/codetabs.css">
+    <link rel="stylesheet" href="../code/code.animate.css">
+    <link rel="stylesheet" href="../libs/css/bootstrap.code09.css">
+
+
+    <!-- CSS embed -->
+    <style>
+        
+        /* Effect live
+        ---------------------------------------------------------- */
+        .fx {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .fx-name {
+            position: absolute;
+            width: 100%;
+            padding-top: 28px;
+            text-align: center;
+            color: #fff;
+        }
+        .fx-live {
+            position: relative;
+            height: 80px;
+            cursor: pointer;
+        }
+        .fx-slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+        }
+        .fx-slide.fx-slide1     { background-color: #fa0; }
+        .fx-slide.fx-slide2     { background-color: #705090; }
+
+
+        /* Effect select */
+        .fx-select {
+            position: absolute;
+            top: 0; right: 0;
+            z-index: 99999;
+        }
+        .fx-select > span {
+            display: block;
+            float: left;
+            width: 20px; height: 12px;
+            padding: 5px;
+            margin-left: 2px;
+
+            background-color: hsla(0,0%,100%,.1);
+            color: hsla(0,0%,0%,.4);
+            font-size: 11px;
+            line-height: 12px;
+            cursor: pointer;
+
+            -webkit-box-sizing: content-box;
+               -moz-box-sizing: content-box;
+                    box-sizing: content-box;
+        }
+
+        .fx.actived          { background-color: #f0f0f0; }
+        .fx-one.actived      { background-color: #d00; color: #fff; }
+        .fx-br               { float: left; width: 100%; height: 80px; }
+
+    </style>
+
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]> <script src="../libs/scripts/html5shiv&respond.js"></script> <![endif]-->
+    
+</head>
+<body>
+
+
+    <!-- HEADER - begin
+    ============================================================== -->
+    <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+        <!-- Logo - begin
+        .......................................................... -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../templates">
+                <img src="../libs/imgs/logo_tabs.png" alt="[logo]">
+            </a>
+        </div>
+        <!-- Logo - end
+        .......................................................... -->
+
+
+
+        <!-- Menu - begin
+        .......................................................... -->
+        <div class="collapse navbar-collapse" id="nav-main">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tabs <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a class="text-success" href="page.templates.tabs.html">All templates</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.effects.one.html">One effect</a></li>
+                        <li><a href="tabs.effects.outin.html">Out/In effect</a></li>
+                        <li><a href="tabs.effects.powerline.html">Powerline effect</a></li>
+                        <li><a href="tabs.effects.fade.html">Fade classic effect</a></li>
+                        <li><a href="tabs.effects.random.html">Random effects</a></li>
+                        <li><a href="tabs.effects.others.html">Control animation</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.mobile.html">Mobile layout</a></li>
+                        <li><a href="tabs.vertical.html">Vertical layout</a></li>
+                        <li><a href="tabs.nested.html">Nested layout</a></li>
+                        <li><a href="tabs.bullet.html">Bullet layout</a></li> 
+                        <li><a href="tabs.fullwidth.html">Fullwidth layout</a></li>
+                        <li><a href="tabs.page.html">Page layout</a></li>
+                        <li><a href="tabs.fancybox.html">Tabs in fancybox</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.style.flat.html">Flat style</a></li>
+                        <li><a href="tabs.style.flatbox.html">Flatbox style</a></li>
+                        <li><a href="tabs.style.classic.html">Classic style</a></li>
+                        <li><a href="tabs.style.pill.html">Pill style</a></li>
+                        <li><a href="tabs.style.underline.html">Underline style</a></li>
+                        <li><a href="tabs.sizes.html">Tabs sizes</a></li>
+                        <li><a href="tabs.style.highlight.html">Highlight</a></li>
+                        <li><a href="tabs.style.fullcolor.html">Fullcolor</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.hor.topBegin.html">Horizontal top-begin</a></li>
+                        <li><a href="tabs.hor.topCenter.html">Horizontal top-center</a></li>
+                        <li><a href="tabs.hor.topEnd.html">Horizontal top-end</a></li>
+                        <li><a href="tabs.hor.topJustified.html">Horizontal top-justified</a></li>
+                        <li><a href="tabs.hor.bottomBegin.html">Horizontal bottom-begin</a></li>
+                        <li><a href="tabs.hor.bottomCenter.html">Horizontal bottom-center</a></li>
+                        <li><a href="tabs.hor.bottomEnd.html">Horizontal bottom-end</a></li>
+                        <li><a href="tabs.hor.bottomJustified.html">Horizontal bottom-justified</a></li>
+                        <li><a href="tabs.ver.topBegin.html">Vertical top-begin</a></li>
+                        <li><a href="tabs.ver.topCenter.html">Vertical top-center</a></li>
+                        <li><a href="tabs.ver.topEnd.html">Vertical top-end</a></li>
+                        <li><a href="tabs.ver.bottomBegin.html">Vertical bottom-begin</a></li>
+                        <li><a href="tabs.ver.bottomCenter.html">Vertical bottom-center</a></li>
+                        <li><a href="tabs.ver.bottomEnd.html">Vertical bottom-end</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.slideshow.timerArc.html">Arc timer</a></li>
+                        <li><a href="tabs.slideshow.timerBar.html">Bar timer</a></li>
+                        <li><a href="tabs.slideshow.timerNumber.html">Number timer</a></li>
+                        <li><a href="tabs.slideshow.timerOnly.html">Timer only</a></li>
+                        <li><a href="tabs.slideshow.random.html">Slideshow random</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="tabs.media.ajax.html">Load ajax content</a></li>
+                        <li><a href="tabs.api.swipeBody.html">Swipe body</a></li>
+                        <li><a href="tabs.api.addremove.html">Add/Remove tabs</a></li>
+                        <li><a href="tabs.api.addAjax.html">Add ajax tabs</a></li>
+                        <li><a href="tabs.api.callback.html">Callback events</a></li>
+                        <li><a href="tabs.api.showByDevice.html">Show by device</a></li>
+                        <li><a href="tabs.api.showFrom.html">Show from</a></li>
+                        <li><a href="tabs.api.deeplinking.html">Deep linking</a></li>
+                        <li><a href="tabs.api.deeplinkingMulti.html">Deep linking multi</a></li>
+                        <li><a href="tabs.api.deeplinkingID.html">Deep linking id</a></li>
+                        <li><a href="tabs.api.cookie.html">Cookie</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Slider <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a class="text-success" href="page.templates.slider.html">All templates</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.basic.html">Basic</a></li>
+                        <li><a href="slider.lazyload.html">Lazyload</a></li>
+                        <li><a href="slider.classic1.html">Classic-1</a></li>
+                        <li><a href="slider.classic2.html">Classic-2</a></li>
+                        <li><a href="slider.responsive.html">Responsive</a></li>
+                        <li><a href="slider.outbox.html">Outbox</a></li>
+                        <li><a href="slider.mobile.html">Mobile</a></li>
+                        <li><a href="slider.fullwidth.html">Fullwidth</a></li>
+                        <li><a href="slider.fullwidthMedia.html">Fullwidth-meida</a></li>
+                        <li><a href="slider.center.html">Center</a></li>
+                        <li><a href="slider.centerMedia.html">Center-media</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.vertical.html">Vertical</a></li>
+                        <li><a href="slider.verticalSwipe.html">Vertical swipe</a></li>
+                        <li><a href="slider.nested.html">Nested</a></li>
+                        <li><a href="slider.multi.html">Multi</a></li>
+                        <li><a href="slider.heightAuto.html">Height-auto</a></li>
+                        <li><a href="slider.heightFixed.html">Height-fixed</a></li>
+                        <li><a href="slider.caption.html">Caption</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="slider.effects.one.html">One effect</a></li>
+                        <li><a href="slider.effects.outin.html">Out/In effect</a></li>
+                        <li><a href="slider.effects.powerline.html">Powerline effect</a></li>
+                        <li><a href="slider.effects.fade.html">Fade classic effect</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.slideshow.timerArc.html">Arc timer</a></li>
+                        <li><a href="slider.slideshow.timerBar.html">Bar timer</a></li>
+                        <li><a href="slider.slideshow.timerNumber.html">Number timer</a></li>
+                        <li><a href="slider.slideshow.timerOnly.html">Timer only</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="page.howto.html">How to</a></li>
+                <li><a href="../documentation/documentation.html">Docs</a></li>
+                <li><a href="http://codecanyon.net/item/codetabs-b-premium-tabs-slider-for-bootstrap/8278901?ref=thystudio" target="_blank">Buy now!</a></li>
+            </ul>
+        </div>
+        <!-- Menu - end
+        .......................................................... -->
+
+    </div>
+    </nav>
+    <!-- HEADER - end
+    ============================================================== -->
+
+
+
+
+
+
+    <!-- HEADING - begin
+    ============================================================== -->
+    <div class="wrapper">
+    <div class="container">
+
+        <div class="title-head ma-b-50">
+            <h1 class="" style="letter-spacing: 0px;">WONDERFUL EFFECTS WITH EASIEST SETUP</h1>
+            <p class="title-desc">slider effects one</p>
+        </div>
+
+
+        <!-- FORM EFFECT - begin -->
+        <div class="fx-form">
+            <h4 class="muted">Choosing effects:</h4>
+            
+
+            <div class="row">
+            <div class="col-sm-5">
+
+                <form action="">
+                    <select id="effects" class="form-control">
+                        <!-- <option value="glueHor"></option> -->
+                    </select>
+                </form>
+                
+            </div>
+            </div>
+        </div>
+        <!-- FORM EFFECT - end -->
+
+    </div>
+    </div>
+    <!-- HEADING - end
+    ============================================================== -->
+
+
+
+
+
+
+    <!-- HIGHTLIGHT SECTION - begin
+    ============================================================== -->
+    <div class="wrapper zone-pattern2">
+    <div class="container">
+
+
+        <!-- SLIDER - begin -->
+        <div class="ct" data-tabs="
+            isAutoRun-on isKeyboard-on responsive-940
+            fxOne-glueHor speed-1000
+            pag-{ type: bullet, align: center, pos: bottom } swipe-{ isBody: true }">
+
+            
+            <a class="ct-img" href="imgs/slider/img_demo_default0.png">[image0]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default1.png">[image1]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default2.png">[image2]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default3.png">[image3]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default4.png">[image4]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default5.png">[image5]</a>
+        </div>
+        <!-- SLIDER - end -->
+
+    </div>
+    </div>
+    <!-- HIGHTLIGHT SECTION - end
+    ============================================================== -->
+
+
+
+
+
+
+    <!-- EFFECT TABLES - begin
+    ============================================================== -->
+    <div class="wrapper">
+    <div class="container">
+        
+        <!-- Heading - begin -->
+        <div class="title-big ma-b-50">LIVE EFFECTS SAMPLE</div>
+        <!-- Heading - end -->
+
+
+        <!-- Template gallery - begin
+        .......................................................... -->
+        <div class="fx-table row">
+            
+            <!-- Effect glueHor -->
+            <!-- <div class="span3">
+                <div class="fx" data-fx="glueHor">
+                    <div class="fx-name">Effect Name</div>
+
+                    <div class="fx-live">
+                        <div class="fx-slide ct-slideIn"></div>
+                        <div class="fx-slide ct-slideOut"></div>
+                    </div>
+
+                    <div class="fx-select">
+                        <span class="fx-one">one</span>
+                    </div>
+                </div>
+            </div> -->
+            
+        </div>
+        <!-- Template gallery - end
+        .......................................................... -->
+
+
+    </div>
+    </div>
+    <!-- EFFECT TABLES - end
+    ============================================================== -->
+
+    
+
+
+    
+    
+    <!-- Footer - begin
+    ============================================================== -->
+    <div class="wrapper footer">
+    <div class="container">
+        
+        <!-- Copyright -->
+        <section class="copyright">
+            <p>&copy; 2014 Thystudio. All Rights Reserved.</p>
+        </section>
+
+    </div>
+    </div>
+    <!-- Footer - end
+    ============================================================== -->
+
+
+
+
+    <!-- Script - begin
+    ============================================================== -->
+    <script src="../libs/scripts/jquery-1.11.1.min.js"></script> <!-- jQuery Libary -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script> <!-- Bootstrap plugin -->
+    <script src="../code/codetabs.js"></script> <!-- Codetabs Plugins -->
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+
+            // Codeslider init
+            var code     = $('.ct').data('codetabs'),
+                actived  = 'actived',
+                speed    = 1000,
+                $effect  = $('#effects'),
+                $fxTable = $('.fx-table'),
+                fxNext   = 'code-slideNext',
+                fxPrev   = 'code-slidePrev',
+                fxIn     = 'code-slideIn',
+                fxOut    = 'code-slideOut',
+                fxAnim   = 'code-animated',
+                $fxLast,
+
+                aFx = ['glueHor', 'glueVer', 'foldHor', 'foldVer', 'foldFromHor', 'foldFromVer', 'roomHor', 'roomVer', 'flitHor', 'flitVer',
+                       'hinge', 'roll', 'br',
+                       'moveHor', 'moveVer', 'fade', 'fadeHor', 'fadeVer', 'scaleInHor', 'scaleInVer', 'scaleOutHor', 'scaleOutVer', 'scalePulse',
+                       'scaleWave', 'roEdgeHor', 'roEdgeVer', 'newspaper', 'pushFromHor', 'pushFromVer', 'slide', 'br',
+                       'fall', 'pulseShort', 'roSoft', 'roDeal', 'wheelHor', 'wheelVer', 'snakeHor', 'snakeVer', 'shuffle', 'browseLeft', 'browseRight',
+                        'slideBehind', 'vacuumHor', 'vacuumVer', 'br',
+                        'scaleSoft', 'snapHor', 'snapVer', 'letInHor', 'letInVer', 'stickHor', 'stickVer', 'growthHor', 'growthVer', 'soEdgeHor', 'soEdgeVer', 'shake', 'tinHor', 'tinVer' ];
+
+
+
+
+            /* Render markup
+            ************************************************************** */
+            var strOptions = '', strFx = '', numFx = 0;
+            for(var i = 0, len = aFx.length-1; i <= len; i++) {
+                var fxCur     = aFx[i];
+
+                if( fxCur === 'br' ) {
+                    strFx += '<div class="fx-br"></div>';
+                }
+
+                else {
+                    numFx++;
+
+                    // Markup form options
+                    strOptions  += '<option value="'+ fxCur + '">'+ numFx +'. '+ fxCur +'</option>';
+
+                    // Markup effect live
+                    strFx += '<div class="col-sm-3 col-xs-6">'
+                           + '<div class="fx" data-fx="'+ fxCur +'">'
+                           + '<div class="fx-live">'
+                           + '<div class="fx-slide fx-slide1 code-animated"><span class="fx-name">'+ numFx +'. '+ fxCur +'</span></div>'
+                           + '<div class="fx-slide fx-slide2 code-animated"><span class="fx-name">'+ numFx +'. '+ fxCur +'</span></div>'
+                           + '</div>'
+                           + '<div class="fx-select">'
+                           + '<span class="fx-one">one</span>'
+                           + '</div>'
+                           + '</div>'
+                           + '</div>';
+                }
+            }
+            $effect.html(strOptions);
+            $fxTable.html(strFx);
+
+
+
+
+            /* Effects select
+            ************************************************************** */
+            $effect.change(function() {
+                var value = $(this).val();
+                
+                // Remove object fxlast if have
+                if( !!$fxLast ) $fxLast.removeClass(actived);
+
+                // Slider: update properties
+                code.prop({ 'fxOne': value });
+
+                return false;
+            });
+
+
+
+
+            /* Effects live show
+            ************************************************************** */
+            var $fx = $('.fx');
+            $fx.each(function() {
+
+                var $el     = $(this),
+                    $fxName = $el.find('.fx-name'),
+                    $fxLive = $el.find('.fx-live'),
+                    $fxOne  = $el.find('.fx-one'),
+                    $slide  = $el.find('.fx-slide'),
+                    $slide1 = $el.find('.fx-slide1'),
+                    $slide2 = $el.find('.fx-slide2'),
+                    fxName  = $el.data('fx'),
+                    fxAdd   = 'codefx-' + fxName,
+                    timerClear;
+
+                var nextFn = function() {
+                        if( !$fxLive.hasClass(fxNext) ) {
+                            $slide1.removeClass(fxOut).addClass(fxIn);
+                            $slide2.removeClass(fxIn).addClass(fxOut);
+                            $fxLive.removeClass(fxPrev).addClass(fxNext);
+                        }
+                    },
+
+                    prevFn = function() {
+                        if( !$fxLive.hasClass(fxPrev) ) {
+                            $slide2.removeClass(fxOut).addClass(fxIn);
+                            $slide1.removeClass(fxIn).addClass(fxOut);
+                            $fxLive.removeClass(fxNext).addClass(fxPrev);
+
+
+                            // Remove effect on sample live
+                            clearTimeout(timerClear);
+                            timerClear = setTimeout(function() {
+                                $fxLive.removeClass(fxPrev);
+                                $el.removeClass(actived);
+                            }, speed);
+                        }
+                    };
+
+
+                // Events hover
+                $fxLive.addClass(fxAdd);
+
+                var timerPrev;
+                $fxLive.on('click', function(e) {
+
+                    // Run effect next
+                    $el.addClass(actived);
+                    $fxLive.removeClass(fxNext);
+                    setTimeout(nextFn, 10);
+
+                    // Setup timer to run effect prev
+                    clearTimeout(timerPrev);
+                    timerPrev = setTimeout(prevFn, speed + 200);
+
+                    return false;
+                });
+
+                
+                // Events click
+                $fxOne.on('click', function() {
+
+                    if( $fxOne.hasClass(actived) ) {
+                        $fxOne.removeClass(actived);
+                    }
+                    else {
+                        if( !!$fxLast ) $fxLast.removeClass(actived);
+                        $fxOne.addClass(actived);
+
+                        // Assign to varible fxlast
+                        $fxLast = $fxOne;
+
+                        // Update options
+                        code.prop({ 'fxOne': fxName });
+                    }
+                });
+            });
+
+
+
+            /* Events resize --> support reset size
+            ************************************************************** */
+            var $fxLiveAll = $('.fx-live'), tResize;
+            $(window).resize(function(e) {
+
+                clearTimeout(tResize);
+                tResize = setTimeout(function() {
+
+                    $fxLiveAll.removeClass('code-slideNext code-slidePrev');
+                }, 200);
+            });
+            
+        });
+    </script>
+    <!-- Script - end
+    ============================================================== -->
+
+</body>
+</html>

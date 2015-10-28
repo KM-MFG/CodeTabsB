@@ -1,0 +1,2935 @@
+<!DOCTYPE html>
+<!-- Hide notice in IE -->
+<!-- saved from url=(0014)about:internet -->
+
+<!--[if IE 7]> <html class="ie ie7"> <![endif]-->
+<!--[if IE 8]> <html class="ie ie8"> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]> <html> <![endif]-->
+<head>
+    
+    <!-- Page Infomations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Title of page -->
+    <title>Documentation | CODETABS B+</title>
+
+    <!-- Favicon & apple-icon -->
+    <link rel="shortcut icon" href="../libs/imgs/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../libs/imgs/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../libs/imgs/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../libs/imgs/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../libs/imgs/icons/apple-touch-icon-144x144.png">
+
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../libs/css/prettify.light.css">
+    <link rel="stylesheet" href="../code/codetabs.css">
+    <link rel="stylesheet" href="../libs/css/bootstrap.code09.css">
+
+
+    <!-- Style embedded -->
+    <style>
+
+        /* Navigation */
+        .navbar-default {
+            position: fixed;
+            width: 100%;
+            padding-top: 0; padding-bottom: 0;
+            top: 0; left: 0;
+            z-index: 99;
+
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+        #nav-main > ul > li > a             { padding: 15px 12px; }
+        .navbar-brand                       { padding-top: 15px; }
+        .navbar-brand > img                 { width: auto; height: 15px; }
+        #nav-main .dropdown-menu > li > a   { padding-top: 8px; padding-bottom: 8px; }
+
+        
+        /* Doc body */
+        .doc-body {
+            margin-top: 100px;
+        }
+
+
+        /* Tables */
+        .tb-options caption                 { text-align: left; }
+        .tb-options > thead > tr > th       { border-bottom-width: 1px; }
+        .tb-options tbody td                { border-top: 1px dotted #ddd !important; }
+        .tb-options tbody td:nth-child(1),
+        .tb-options tbody td:nth-child(2),
+        .tb-options tbody td:nth-child(3)   { font-family: monospace, serif; }
+        
+        .tb-options tbody td:nth-child(1)   { color: #000; }
+        .tb-options tbody td:nth-child(3)   { 
+            width: 70%;
+            font-size: 12px;
+            line-height: 19px;
+            color: #777;
+        }
+
+        .tb-options a                       { border-bottom: 1px dashed #ccc; color: #777; }
+        .tb-options a.label                 { border-bottom-width: 0; }
+
+        @media only screen and (min-width: 1px) and (max-width: 767px) {
+            .tb-options                     { font-size: .85em; }
+            .tb-options caption,
+            .tb-options td                  { padding-left: 0; }
+        }
+
+
+        
+        .pa-tb-30 { padding-top: 30px; padding-bottom: 30px; }
+        .pa-tb-50 { padding-top: 50px; padding-bottom: 50px; }
+        .ma-l-20  { margin-left: 20px; }
+        .ma-b-150 { margin-bottom: 150px !important; }
+        .ma-b-200 { margin-bottom: 200px !important; }
+        .subtitle {
+            display: inline-block;
+            padding: 5px 15px;
+            font-size: 1em;
+            border-left: 4px solid #999;
+            background-color: #eee;
+            color: #181818;
+        }
+
+        ul.expanded > li        { margin-bottom: 30px; }
+        .pattern-light          { background-color: #e5e5e5; }
+        .text-mini              { font-size: .85em; -webkit-font-smoothing: subpixel-antialiased; }
+
+        
+        
+        /* Frame image */
+        .frame {
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        .frame-bg               { border: none; background-color: #e5e5e5; }
+        .frame > img            { display: inline-block; zoom: 1; }
+        .frame-img1             { margin-right: 50px; }
+
+        @media only screen and (min-width: 671px) and (max-width: 991px) {
+            .frame-img1         { margin-right: 20px; }
+        }
+        @media only screen and (min-width: 480px) and (max-width: 670px) {
+            .frame-img1         { margin: 0 10px 20px 10px; }
+        }
+        @media only screen and (min-width: 1px) and (max-width: 479px) {
+            .frame-img1         { margin-right: 0; margin-bottom: 20px; }
+        }
+
+        
+
+        /* Image responsive */
+        @media only screen and (min-width: 768px) and (max-width: 959px) {
+            .img-res { display: block; width: 100%; height: auto; }
+        }
+        @media only screen and (min-width: 1px) and (max-width: 767px) {
+            .img-res { display: block; width: 100%; height: auto; }
+        }
+
+
+        /* Logs */
+        .log {
+            font-family: monospace;
+            font-size: .85em;
+            padding-left: 20px;
+            border-left: 1px dashed #ccc;
+        }
+    </style>
+    
+</head>
+<body class="">
+    
+
+    <!-- /////////////////////////////////////////////////////////
+        Header - begin
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+    <nav class="navbar navbar-default" role="navigation" style="background-color: #f5f5f5; border-bottom: 1px solid #eee">
+    <div class="container">
+
+
+        <!-- Logo - begin
+        .......................................................... -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../templates">
+                <img src="../libs/imgs/logo_tabs.png" alt="[logo]" title="[codetabs]">
+            </a>
+        </div>
+        <!-- Logo - end
+        .......................................................... -->
+
+
+
+        <!-- Menu - begin
+        .......................................................... -->
+        <div class="collapse navbar-collapse" id="nav-main">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="#basic"><span class="text-success">Quick guide</span></a></li>
+                <li><a href="#opts"><span class="text-success">Table Options</span></a></li>
+                
+                <li><a href="#effect">Effects</a></li>
+                <li><a href="#style">Styles</a></li>
+                <li><a href="#position">Positions</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle text-success" data-toggle="dropdown">Slider <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        
+                        <li><a href="#slider-opts">Table options</a></li>
+                        <li><a href="#slider-setup">Basic setup</a></li>
+                        <li><a href="#slider-lazyload">Image lazyload</a></li>
+                        <li><a href="#slider-res">Responsive</a></li>
+                        <li><a href="#slider-center">Center</a></li>
+                        <li><a href="#slider-caption">Caption</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Slideshow <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a href="#ss-basic">Basic setup</a></li>
+                        <li><a href="#ss-timer-arc">Timer arc</a></li>
+                        <li><a href="#ss-timer-other">Timer others</a></li>
+                        <li><a href="#ss-other">Other options</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Markup <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a href="#render">Render</a></li>
+                        <li><a href="#outside">Outside</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        
+                        <li><a href="#deeplinking">Deep linking</a></li>
+                        <li><a href="#cookie">Cookie</a></li>
+                        <li><a href="#api">APIs</a></li>
+                        <li><a href="#log">Changelogs</a></li>
+                    </ul>
+                </li>
+
+                <!-- <li><a href="#">Buy now!</a></li> -->
+            </ul>
+        </div>
+        <!-- Menu - end
+        .......................................................... -->
+
+        
+    </div>
+    </nav>
+    <!-- /////////////////////////////////////////////////////////
+        Header - end
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+
+
+    <!-- /////////////////////////////////////////////////////////
+        Body content - begin
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+    <!-- Content - begin
+    ============================================================== -->
+    <div class="doc-body">
+    <div class="container">
+
+        <div>
+            
+            <!-- WELCOME - begin
+            ====================================================== -->
+            <div id="welcome" class="ma-b-150">
+
+                <!-- Image Preview Begin -->
+                <div class="frame no-bo" style="background-color: #705090">
+                    <img class="img-res" src="imgs/preview.png" alt="[preview]">
+                </div>
+                <!-- Image Preview End -->
+
+                
+                <div class="ma-b-20">
+                    <h1 class="no-ma img-fit">WELCOME TO
+                        <br>the documentation of CodeTabs B+</h1>
+                </div>
+                
+                    
+                <p class="bo-l-h"><small>
+                    <strong>Date created:</strong> 27.06.2014<br>
+                    <strong>Date last updated:</strong> 28.11.2014<br>
+                    <strong>Author:</strong> thystudio<br>
+                    <strong>follow me on: </strong><a href="http://codecanyon.net/user/thystudio" target="_blank">codecanyon</a>
+                </small></p>
+
+            </div>
+            <!-- WELCOME - end
+            ====================================================== -->
+
+
+
+
+            <div class="hr dash none left ma-b-150"></div>
+
+
+
+
+            <!-- BASIC SETUP - begin
+            ====================================================== -->
+            <div id="basic" class="ma-b-150">
+
+                <!-- Title -->
+                <h1 class="title">QUICK GUIDE</h1>
+
+
+
+                <p><span class="text-success">Quick guide</span> to set up most basic for active codetabs. The other section will provide detailed options.</p>
+
+                <p class="ma-b-10"><b>1. HOSTING : </b> upload <span class="label code">code</span> folder to your hosting, this folder includes main script, css and other parts of codetabs.</p>
+                <ul class="list text-code ma-l-20">
+                    <li>code</li>
+                </ul>
+
+                <p class="ma-b-10">Other folders include : </p>
+                <ul class="list text-code condensed ma-l-20">
+                    <li>documentation <span class="muted">| documentation used in codetabs</span></li>
+                    <li>templates <span class="muted">| including the entire pure HTML templates</span></li>
+                    <li>libs <span class="muted">| including components used in theme</span></li>
+                    <li>PSD <span class="muted">| including all layered PSD templates</span></li>
+                </ul>
+                <br><br>
+
+
+
+                
+                <p><b>2. CODETABS FILES : </b> insert main script, css of codetabs on site :</p>
+
+                <pre class="prettyprint">&lt;!-- Main css cua codetabs, including styles, skins --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;code/codetabs.css&quot;&gt;
+
+&lt;!-- Effects ONE and OUT-IN in codetabs --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;code/code.animate.css&quot;&gt;
+
+&lt;!-- jQuery 1.7+ required - hosted from Google --&gt;
+&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Main script of codetabs --&gt;
+&lt;script src=&quot;code/codetabs.js&quot;&gt;&lt;/script&gt;</pre>
+                <br><br>
+
+
+
+
+                <p class="ma-b-10"><b>3. MARKUP HTML : </b> insert codetabs html on site :</p>
+                <ul class="list disc condensed">
+                    <li>Class <span class="label success text-code">.ct</span> &rarr; core css of codetabs.</li>
+                    <li>Class <span class="label success text-code">.ct-flatbox</span> &rarr; style flatbox for codetabs.</li>
+                </ul>
+
+                <pre class="prettyprint">&lt;div class=&quot;ct ct-flatbox&quot;&gt;
+    &lt;!-- TAB 1 --&gt;
+    &lt;div&gt;
+        &lt;!-- Tab title --&gt;
+        &lt;div class=&quot;ct-pagitem&quot;&gt;Tabs title&lt;/div&gt;
+
+        &lt;!-- Tab content --&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit...&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- TAB others same TAB 1 --&gt;
+    &lt;div&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+                <br><br>
+                
+
+
+
+
+                <p><b>4. SETTING OPTIONS : </b> initialize the codetabs</p>
+                
+                <div class="ct ct-pill ct-size-small" data-tabs="
+                    isAutoRun-on isSwipe-off fx-line speed-200 pag-{ pos: top } ">
+
+
+                    <!-- TAB HTML data - begin
+                    .......................................................... -->
+                    <div>
+                        <div class="ct-pagitem text-mini">HTML5 DATA</div>
+                        <div>
+                            <ul class="list disc condensed">
+                                <li>Setting options directly on the markup by HTML5 data</li>
+                                <li><span class="label success text-code">isAutoRun-on</span> option: codetabs automatic worked after markup ready</li>
+                            </ul>
+
+                            <pre class="prettyprint">&lt;div class=&quot;ct ct-flatbox&quot; data-codtabs=&quot;
+    isAutoRun-on
+    fxOne-stickVer speed-1200 pag-{ align: center } &quot;&gt;
+    ...
+&lt;/div&gt;</pre>
+                        </div>
+                    </div>
+                    <!-- TAB HTML data - end
+                    .......................................................... -->
+
+
+                    
+                    <!-- TAB JAVASCRIPT - begin
+                    .......................................................... -->
+                    <div>
+                        <div class="ct-pagitem text-mini">JAVASCRIPT</div>
+                        <div>
+                            <p>Setting options by javascript like other jQuery plugins</p>
+                            <pre class="prettyprint">&lt;script&gt;
+    jQuery(document).ready(function($) {
+
+        $('.ct').codetabs({
+            fxOne : 'stickVer',
+            speed : 1200,
+            pag   : { align : 'center' }
+        });
+    });
+&lt;/script&gt;</pre>
+                        </div>
+                    </div>
+                    <!-- TAB JAVASCRIPT - end
+                    .......................................................... -->
+                
+                </div>
+                
+                <div class="alert success text-center no-icon">
+                    <h5>With a few simple steps, codetabs ready to work!</h5>
+                    <a class="success" href="../templates/tabs.simplest.html" target="_blank" style="text-decoration: underline"><h3>View example</h3></a>
+                </div>
+
+            </div>
+            <!-- BASIC SETUP - end
+            ====================================================== -->
+
+
+
+
+
+
+            <div class="hr dash none left ma-b-150"></div>
+
+
+
+
+
+
+
+            <!-- OPTIONS - begin
+            ====================================================== -->
+            <!-- Title -->
+            <div id="opts" class="ma-b-150">
+                <h1 class="title">TABLE OPTIONS</h1>
+                
+                <!-- Tuy chon chung - begin -->
+                <table class="table table-hover table-condensed tb-options ma-b-100">
+                    <caption><h3>General options</h3></caption>
+
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>                        
+                        <tr>
+                            <td>fxOne</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Set the name of effect 'One'</td>
+                        </tr>
+
+                        <tr>
+                            <td>fxOut</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Set the name effects 'OUT' of effects 'Out/In'</td>
+                        </tr>
+
+                        <tr>
+                            <td>fxIn</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Set the name effects 'IN' of effects 'Out/In'</td>
+                        </tr>
+
+                        <tr>
+                            <td>fx</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Set other effects, including effect 'line' (powerline) and effect 'fade' classic.</td>
+                        </tr>
+
+                        <tr>
+                            <td>fxEasing</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Easing of effects in effect 'One' and 'Out/In'.</td>
+                        </tr>
+
+                        <tr>
+                            <td>speed</td>
+                            <td><span class="text-info">400</span></td>
+                            <td>Duration of the effect. Unit millisecond.</td>
+                        </tr>
+
+                        <tr>
+                            <td>margin</td>
+                            <td><span class="text-info">0</span></td>
+                            <td>Distance between slides. Unit is px and supports distances left and right. Example:
+                                <ul class="list disc condensed">
+                                    <li>margin-10-20 : 10px is left distance, 20px is right distance</li>
+                                    <li>margin-30 : 30px is left and right distance</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr id="opts-idBegin">
+                            <td>idBegin</td>
+                            <td><span class="bold">begin</span></td>
+                            <td>Set the slide will appear as codetabs initialization, ID of slides started with 0. List of value option: <br><br>
+                                <ul class="list disc condensed">
+                                    <li><span class="text-success">'begin'</span>: begin position, equivalent to idBegin = 0</li>
+
+                                    <li><span class="text-success">'center'</span>: center position. If the total number of slides is an even number, then the position will be located near the left side. Example: Num of slide is 6, value of idBegin is 2</li>
+
+                                    <li><span class="text-success">'centerRight'</span>: similar 'center' value, but located near the right side. Example: Num of slide is 6, value of idBegin is 3</li>
+
+                                    <li><span class="text-success">'end'</span>: end position</li>
+
+                                    <li><span class="text-info">0 1 2 ...</span>: specific value of the ID slide</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>preload</td>
+                            <td><span class="text-info">1</span></td>
+                            <td>The number of slides(tabs) preloaded before the codetabs appears.</td>
+                        </tr>
+
+                        <tr>
+                            <td>loadAmount</td>
+                            <td><span class="text-info">2</span></td>
+                            <td>The number next slides(tabs) will load after codetabs appears, the slides will load in parallel.</td>
+                        </tr>
+
+                        <tr>
+                            <td>show</td>
+                            <td><span class="text-success">all</span></td>
+                            <td>Set codetabs initialized only on the specified device. Options include 'desktop', 'mobile' and 'all'.</td>
+                        </tr>
+
+                        <tr>
+                            <td>showFrom</td>
+                            <td><span class="text-info">0</span></td>
+                            <td>Set codetabs will appear in range width of the site. Range-width have 2 values 'min-width' and 'max-width'(optional).</td>
+                        </tr>
+
+
+
+                        <!-- table row blank -->
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td>isAutoRun</td>
+                            <td><span class="text-error">false</span></td>
+                            <td>Option exclusively for HTML5 data. Codetabs is automatically initialized after markup have loaded.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isSlideshow</td>
+                            <td><span class="text-error">false</span></td>
+                            <td>Turn on/off slideshow.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isNav</td>
+                            <td><span class="text-error">true</span></td>
+                            <td>Turn on/off navigation tabs.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isPag</td>
+                            <td><span class="text-error">false</span></td>
+                            <td>Turn on/off pagination(tablist) tabs.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isSwipe</td>
+                            <td><span class="text-error">true</span></td>
+                            <td>Turn on/off features swipe on codetabs.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isKeyboard</td>
+                            <td><span class="text-error">false</span></td>
+                            <td>Turn on/off keyboard navigation, left/right arrow to go prev/next slide.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isDeeplink</td>
+                            <td><span class="text-error">false</span></td>
+                            <td>Turn on/off <a href="#deeplinking">deep-linking</a> features.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isCookie</td>
+                            <td><span class="text-error">false</span></td>
+                            <td>Turn on/off <a href="#cookie">cookie</a> features.</td>
+                        </tr>
+
+                        <tr>
+                            <td>name</td>
+                            <td><span class="">null</span></td>
+                            <td>The proper name for each codetabs in the site. Used to link components markup outside with main markup of codetabs.</td>
+                        </tr>
+
+                        <tr>
+                            <td>ns</td>
+                            <td><span class="text-success">ct-</span></td>
+                            <td>Prefix string attached to the class element generated by the codetabs.</td>
+                        </tr>
+
+                        <tr>
+                            <td>canvasName</td>
+                            <td><span class="text-success">canvas</span></td>
+                            <td>Set the name-class of the component 'canvas'.</td>
+                        </tr>
+
+                        <tr>
+                            <td>viewportName</td>
+                            <td><span class="text-success">viewport</span></td>
+                            <td>Set the name-class of the component 'viewport'.</td>
+                        </tr>
+
+                        <tr>
+                            <td>slideName</td>
+                            <td><span class="text-success">slide</span></td>
+                            <td>Set the name-class of the components 'slides'.</td>
+                        </tr>
+
+                        <tr>
+                            <td>lazyName</td>
+                            <td><span class="text-success">src</span></td>
+                            <td>Name to be replaced in 'data-src' on &lt;img&gt; tag using image lazyload function.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <!-- Tuy chon chung - end -->
+
+                
+
+                <!-- Tuy chon trong pag object - begin -->
+                <table class="table table-hover table-condensed tb-options ma-b-100">
+                    <caption><h3>Options in <span class="text-success">pag</span> object</h3></caption>
+
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>type</td>
+                            <td><span class="text-success">tab</span></td>
+                            <td>Type of pagination(tablist), options include 'tab' and 'bullet'.</td>
+                        </tr>
+
+                        <tr>
+                            <td>width</td>
+                            <td><span class="text-info">null</span></td>
+                            <td>Set fixed width for pagItem. By default, the pagItem will get largest width in the pagItems.</td>
+                        </tr>
+
+                        <tr>
+                            <td>height</td>
+                            <td><span class="text-info">null</span></td>
+                            <td>Set fixed height for pagItem. By default, the pagItem will get largest height in the pagItems.</td>
+                        </tr>
+
+                        <tr>
+                            <td>dirs</td>
+                            <td><span class="text-success">hor</span></td>
+                            <td>Set the direction of pagination, options include 'hor'(horizontal) and 'ver'(vertical).</td>
+                        </tr>
+
+                        <tr>
+                            <td>pos</td>
+                            <td><span class="text-success">top</span></td>
+                            <td>Set the position of pagination compared to the content tabs. Options include 'top' and 'bottom'.</td>
+                        </tr>
+
+                        <tr>
+                            <td>align</td>
+                            <td><span class="text-success">begin</span></td>
+                            <td>Align of pagItems compared to pagination. Options include 'begin', 'center', 'end' and 'justified'.</td>
+                        </tr>
+
+                        <tr>
+                            <td>speed</td>
+                            <td><span class="text-info">300</span></td>
+                            <td>Time to transition of pagItem current automatically move to the center position.</td>
+                        </tr>
+
+                        <tr>
+                            <td>ease</td>
+                            <td><span class="text-success">easeOutCubic</span></td>
+                            <td>Easing transition of pagItem current automatically move to the center position.</td>
+                        </tr>
+
+                        <tr>
+                            <td>sizeAuto</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Set width(direction hor) / height(direction ver) of pagination compared to width/height of codetabs.
+                                <br>By default 'null': size of pagination depends on css.
+                                <br>Option 'self': size pagination is equal to size all pagItems combined.
+                                <br>Option 'full': size pagination is equal to size content of codetabs.</td>
+                        </tr>
+
+                        <tr>
+                            <td>moreClass</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Adding class in pagination markup.</td>
+                        </tr>
+
+                        <tr>
+                            <td>wMinToHor</td>
+                            <td><span class="text-info">0</span></td>
+                            <td>Setting exclusive for vertical direction. Minimum width of codetabs to switch to horizontal direction.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isActivedCenter</td>
+                            <td><span class="text-error">true</span></td>
+                            <td>Turn on/off the current pagItem automatically moves into the center position of pagination.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <!-- Tuy chon trong pag object - end -->
+
+
+
+                <!-- Tuy chon trong slideshow object - begin -->
+                <table class="table table-hover table-condensed tb-options ma-b-100">
+                    <caption><h3>Options in <span class="text-success">slideshow</span> object</h3></caption>
+
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>delay</td>
+                            <td><span class="text-info">8000</span></td>
+                            <td>Set wait time to move next slide of codetabs in slideshow. Unit is millisecond.</td>
+                        </tr>
+
+                        <tr>
+                            <td>timer</td>
+                            <td><span class="text-success">arc</span></td>
+                            <td>Set timer of slideshow. Options include 'arc', 'bar' and 'number'.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isAutoRun</td>
+                            <td><span class="text-error">true</span></td>
+                            <td>Turn on/off auto-running slideshow after initialization codetabs.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isPlayPause</td>
+                            <td><span class="text-error">true</span></td>
+                            <td>Turn on/off 'playpause' component in slideshow.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isTimer</td>
+                            <td><span class="text-error">true</span></td>
+                            <td>Turn on/off 'timer' component in slideshow.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isHoverPause</td>
+                            <td><span class="text-error">false</span></td>
+                            <td>Turn on/off features mouse over on codetabs, slideshow automatically pause.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isRunInto</td>
+                            <td><span class="text-error">true</span></td>
+                            <td>Turn on/off features only slideshow when codetabs displayed on areas visible of browser.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isRandom</td>
+                            <td><span class="text-error">false</span></td>
+                            <td>Turn on/off auto switch to random slide in slideshow.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <!-- Tuy chon trong slideshow object - end -->
+
+
+
+                <!-- Tuy chon trong swipe object - begin -->
+                <table class="table table-hover table-condensed tb-options ma-b-100">
+                    <caption><h3>Options in <span class="text-success">swipe</span> object</h3></caption>
+
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>isMobile</td>
+                            <td><span class="text-error">true</span></td>
+                            <td>Turn on/off swipe gestures on mobile devices.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isBody</td>
+                            <td><span class="text-error">false</span></td>
+                            <td>Turn on/off swipe gestures in body content of tabs.</td>
+                        </tr>
+
+                        <tr>
+                            <td>isBodyOnMobile</td>
+                            <td><span class="text-error">false</span></td>
+                            <td>Turn on/off swipe gestures in body content of tabs but on mobile devices.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Tuy chon trong swipe object - end -->
+
+
+
+
+                <table class="table table-hover table-condensed tb-options ma-b-100">
+                    <caption><h3>Separate options for each slide, use <span class="text-success">'data-slide'</span></h3></caption>
+
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>fxOne</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Set the name of effect 'One'</td>
+                        </tr>
+
+                        <tr>
+                            <td>fxOut</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Set the name effects 'OUT' of effects 'Out/In'</td>
+                        </tr>
+
+                        <tr>
+                            <td>fxIn</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Set the name effects 'IN' of effects 'Out/In'</td>
+                        </tr>
+
+                        <tr>
+                            <td>fx</td>
+                            <td><span class="text-success">null</span></td>
+                            <td>Set other effects, including effect 'line
+                            ' (powerline) and effect 'fade' classic.</td>
+                        </tr>
+
+                        <tr>
+                            <td>speed</td>
+                            <td><span class="text-info">400</span></td>
+                            <td>Duration of the effect. Unit millisecond.</td>
+                        </tr>
+
+                        <tr>
+                            <td>delay</td>
+                            <td><span class="text-info">null</span></td>
+                            <td>Set wait time to move next slide of codetabs in slideshow. Unit is millisecond.</td>
+                        </tr>
+
+                        <tr>
+                            <td>classAdd</td>
+                            <td><span class="text-success">""</span></td>
+                            <td>Append more classes to codetabs when switch slide</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+                <!-- Description - begin -->
+                <p class="ma-b-10"><span class="subtitle">Notes</span></p>
+                <ul class="list expanded">
+                    <li>Distinguish value-type by color :
+                        <br><span class="text-info"><b>number</b></span> - <span class="text-success"><b>string</b></span> - <span class="text-error"><b>boolean</b></span> - <b>mixed value</b>
+                    </li>
+
+                    <li>
+                        <p>HTML5 data - Easy setup options by Javascript Object Literal Notation as other plugins jQuery, same time support setup options by HTML5 data attributes.
+                            <br><br>The structure options in HTML5 data : <span class="label code">[key]-[value]</span>, options separated by the space.</p>
+
+                                                
+                        <!-- Code sample -->
+                        <div class="ct ct-pill ct-size-mini" data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                            <div>
+                                <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                                <pre class="prettyprint">&lt;!-- Setup options direct on tabs --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;fxOne-glueHor speed-1200 pag-{ align: center }&quot;&gt;
+    ...
+&lt;/div&gt;</pre>
+                            </div>
+                            
+                            <div>
+                                <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                                <pre class="prettyprint">// Setup options in javascript
+$('.ct').codetabs({
+    fxOne   : 'glueHor',
+    speed   : 1200,
+    pag     : { align : 'center' } 
+});</pre>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <p>Options 'object' in HTML5 data similar as Javascript.</p>
+
+                        <!-- Code sample -->
+                        <div class="ct ct-pill ct-size-mini " data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                            <div>
+                                <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                                <pre class="prettyprint">&lt;!-- Setup options direct on tabs --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;slideshow-{ delay: 5000, timer: bar, isRandom: true }&quot;&gt;
+    ...
+&lt;/div&gt;</pre>
+                            </div>
+                            
+                            <div>
+                                <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                                <pre class="prettyprint">// Setup options in javascript
+$('.ct').codetabs({
+    slideshow : {
+                    delay    : 5000,
+                    timer    : 'bar',
+                    isRandom : true
+                }
+});</pre>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <p>Options on each slide - is setup directly on each slide by <i class="text-success">'data-slide'</i> (HTML5 data attributes)
+                            <br>Codetabs will priority get the option on each slide compared with same name the general options.</p>
+
+                        <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;speed-400 delay-5000&quot;&gt;
+    
+    &lt;!-- slide custom setup --&gt;
+    &lt;div data-slide=&quot;speed-600 delay-8000&quot;&gt; ... &lt;/div&gt;
+    ...
+&lt;/div&gt;</pre>
+                    </li>
+
+                    <li>
+                        Options have <span class="label code">is</span> prefix &rarr; <b>boolean</b> value.
+                        <br><b>true/on/1</b> same result for <b>true</b> boolean value in HTML5 data attributes.
+                        <br><b>false/off/0</b> same result for <b>false</b> boolean value in HTML5 data attributes.
+                    </li>
+                </ul>
+                <!-- Description - end -->
+
+
+            </div>
+            <!-- OPTIONS - end
+            ====================================================== -->
+
+
+
+
+
+
+
+            <div class="hr dash none left ma-b-150"></div>
+
+
+
+
+
+
+            <!-- EFFECTS - begin
+            ====================================================== -->
+            <div id="effect" class="ma-b-150">
+                <h1 class="">EFFECTS</h1>
+
+
+                <!-- EFFECTS INOUT - begin
+                .................................................. -->
+                <div class="ma-b-150">
+                    <h3>EFFECT OUT-IN</h3>
+                    <p>'Out-In' effect devided into 2 parts corresponding to the 2 slides(tabs) when switching. 'Out' effect applies for the current slide, and 'In' effect applies for the next slide.</p>
+
+                    <!-- Image preview -->
+                    <div class="frame frame-bg pa-tb-30">
+                        <img src="imgs/effect.outin.png" alt="effect out in">
+                    </div>
+
+
+                    <p>List of 'Out-In' effects :</p>
+                    <p class="text-code ma-b-50"><span class="label">Attentions</span>
+                        <br>wave, juggle, flatten, bounce, flash, pulse, rubberBand, swing, tada, wobble,
+                        flip, bobUp, bobDown, bobLeft, bobRight, ringLeft, ringRight, ringUp, ringDown,
+                        shake, shakeSlow, shakeLittle, shakeHard, shakeHor, shakeVer, shakeRotate, shakeOpacity, shakeCrazy
+                        <br><br>
+
+                        <span class="label">Basic - Specials</span>
+                        <br>fadeOut, fadeIn, bounceOut, bounceIn,
+                            roSlit, newspaperOut, newspaperIn, holeOut,
+                            flipXOut, flipYOut, flipXIn, flipYIn,
+                            lightSpeedOut, lightSpeedIn,
+                            hinge, rollOut, rollIn,
+                            magic, swap, twistUpIn, twistDownIn,
+                            puffOut, pullIn, swashOut, swashIn, vanishOut, vanishIn,
+                            foolishOut, foolishIn, bombLeftOut, bombRightOut
+                        <br><br>
+
+                        <span class="label">Pull - Glue - Perspective</span>
+                        <br>pullOut, pullIn, pushOut, pushIn,
+                            pullBounceOut, pullBounceIn, pushBounceOut, pushBounceIn,
+                            pullSoftOut, pullSoftIn, pushSoftOut, pushSoftIn,
+                            glueLeftOut, glueRightOut, glueUpOut, glueDownOut,
+                            glueLeftIn, glueRightIn, glueUpIn, glueDownIn,
+                            perspectiveLeftOut, perspectiveRightOut, perspectiveUpOut, perspectiveDownOut,
+                            perspectiveLeftIn, perspectiveRightIn, perspectiveUpIn, perspectiveDownIn
+                        <br><br>
+
+                        <span class="label">Move - Fan - Scale</span>
+                        <br>moveLeftBehind, moveRightBehind, moveLeftFront, moveRightFront,
+                            moveShortLeftBehind, moveShortRightBehind, moveShortLeftFront, moveShortRightFront,
+                            fanBehindUp, fanBehindDown, fanFrontUp, fanFrontDown,
+                            soEdgeLeftOut, soEdgeRightOut, soEdgeUpOut, soEdgeDownOut,
+                            soEdgeLeftIn, soEdgeRightIn, soEdgeUpIn, soEdgeDownIn
+                        <br><br>
+
+                        <span class="label">Slide</span>
+                        <br>slideLeftOut, slideRightOut, slideUpOut, slideDownOut,
+                            slideLeftIn, slideRightIn, slideUpIn, slideDownIn,
+                            slideOneLeftOut, slideOneRightOut, slideOneUpOut, slideOneDownOut,
+                            slideOneLeftIn, slideOneRightIn, slideOneUpIn, slideOneDownIn,
+                            slideShortLeftOut, slideShortRightOut, slideShortUpOut, slideShortDownOut,
+                            slideShortLeftIn, slideShortRightIn, slideShortUpIn, slideShortDownIn,
+                            slideFadeLeftOut, slideFadeRightOut, slideFadeUpOut, slideFadeDownOut,
+                            slideFadeLeftIn, slideFadeRightIn, slideFadeUpIn, slideFadeDownIn,
+                            slideBounceLeftOut, slideBounceRightOut, slideBounceUpOut, slideBounceDownOut,
+                            slideBounceLeftIn, slideBounceRightIn, slideBounceUpIn, slideBounceDownIn,
+                            slideTinLeftOut, slideTinRightOut, slideTinUpOut, slideTinDownOut,
+                            slideTinLeftIn, slideTinRightIn, slideTinUpIn, slideTinDownIn, 
+                            slideShakeLeftOut, slideShakeRightOut, slideShakeUpOut, slideShakeDownOut,
+                            slideShakeLeftIn, slideShakeRightIn, slideShakeUpIn, slideShakeDownIn,
+                            slideScaleLeftOut, slideScaleRightOut, slideScaleUpOut, slideScaleDownOut,
+                            slideScaleLeftIn, slideScaleRightIn, slideScaleUpIn, slideScaleDownIn,
+                            slidePullLeftOut, slidePullRightOut, slidePullUpOut, slidePullDownOut,
+                            slidePullLeftIn, slidePullRightIn, slidePullUpIn, slidePullDownIn
+                        <br><br>
+
+                        <span class="label">Rotate</span>
+                        <br>roLeftOut, roRightOut, roUpOut, roDownOut,
+                            roLeftIn, roRightIn, roUpIn, roDownIn,
+                            roDownLeftOut, roDownRightOut, roUpLeftOut, roUpRightOut,
+                            roDownLeftIn, roDownRightIn, roUpLeftIn, roUpRightIn,
+                            roSoftLeftOut, roSoftRightOut, roSoftLeftIn, roSoftRightIn,
+                            roTwistLeftOut, roTwistRightOut, roTwistUpOut, roTwistDownOut,
+                            roTwistLeftIn, roTwistRightIn, roTwistUpIn, roTwistDownIn,
+                            roWheelLeftOut, roWheelRightOut, roWheelUpOut, roWheelDownOut,
+                            roWheelLeftIn, roWheelRightIn, roWheelUpIn, roWheelDownIn,
+                            roFlitLeftOut, roFlitRightOut, roFlitUpOut, roFlitDownOut,
+                            roFlitLeftIn, roFlitRightIn, roFlitUpIn, roFlitDownIn,
+                            roFoldLeftOut, roFoldRightOut, roFoldUpOut, roFoldDownOut,
+                            roFoldLeftIn, roFoldRightIn, roFoldUpIn, roFoldDownIn,
+                            roRoomLeftOut, roRoomRightOut, roRoomUpOut, roRoomDownOut,
+                            roRoomLeftIn, roRoomRightIn, roRoomUpIn, roRoomDownIn,
+                            roEdgeLeftOut, roEdgeRightOut, roEdgeUpOut, roEdgeDownOut,
+                            roEdgeLeftIn, roEdgeRightIn, roEdgeUpIn, roEdgeDownIn,
+                            roEdgeSoftLeftOut, roEdgeSoftRightOut, roEdgeSoftUpOut, roEdgeSoftDownOut,
+                            roShortPushLeftOut, roShortPushRightOut, roShortPushLeftIn, roShortPushRightIn,
+                            roShortPullLeftOut, roShortPullRightOut, roShortPullLeftIn, roShortPullRightIn
+                    </p>
+
+
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini " data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;fxOut-roSoftRightOut fxIn-pullIn&quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <pre class="prettyprint">$('.ct').codetabs({
+    fxOut : 'roSoftRightOut',
+    fxIn  : 'pullIn'
+    
+});</pre>
+                        </div>
+                    </div>
+
+                    <a class="label success text-small" href="../templates/tabs.effects.outin.html" target="_blank">View example</a>
+                </div>
+                <!-- EFFECTS INOUT - end
+                .................................................. -->
+
+
+
+
+
+                <!-- EFFECTS ONE - begin
+                .................................................. -->
+                <div class="ma-b-150">
+                    <h3>EFFECT ONE</h3>
+                    <p>The easiest way to set effects compared to 'Out-In' effects.
+                        <br>'One' effects is combination 2 effects 'Out' and 'In' by css. 'One' effects also support 2 effects when moving next or prev slide.</p>
+
+                    <!-- Image preview -->
+                    <div class="frame frame-bg pa-tb-30">
+                        <img src="imgs/effect.one.png" alt="effect one">
+                    </div>
+                    
+                    
+                    <p class="ma-b-10">List of 'One' effects :</p>
+                    <p class="text-code ma-b-50">glueHor, glueVer, foldHor, foldVer, foldFromHor, foldFromVer, roomHor, roomVer, flitHor, flitVer,
+                       hinge, roll, moveHor, moveVer, fade, fadeHor, fadeVer, scaleInHor, scaleInVer, scaleOutHor, scaleOutVer, scalePulse,
+                       scaleWave, roEdgeHor, roEdgeVer, newspaper, pushFromHor, pushFromVer, slide,
+                       fall, pulseShort, roSoft, roDeal, wheelHor, wheelVer, snakeHor, snakeVer, shuffle, browseLeft, browseRight,
+                        slideBehind, vacuumHor, vacuumVer,
+                        scaleSoft, snapHor, snapVer, letInHor, letInVer, stickHor, stickVer, growthHor, growthVer, soEdgeHor, soEdgeVer, shake, tinHor, tinVer</p>
+                    
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini " data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;fxOne-stickVer&quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <pre class="prettyprint">$('.ct').codetabs({ fxOne : 'stickVer' });</pre>
+                        </div>
+                    </div>
+
+                    <a class="label success text-small" href="../templates/tabs.effects.one.html" target="_blank">View example</a>
+                </div>
+                <!-- EFFECTS ONE - end
+                .................................................. -->
+
+
+                
+
+                <!-- EFFECTS POWERLINE - begin
+                .................................................. -->
+                <div class="ma-b-150">
+                    <h3>EFFECT POWERLINE</h3>
+                    <p>'Powerline' effect is classic effect, has its own way of operating than 'One' or 'Out-In' effects. It is effect of simple, fast and smooth.</p>
+
+                    <!-- Image preview -->
+                    <div class="frame frame-bg pa-tb-30">
+                        <img src="imgs/effect.powerline.png" alt="effect powerline">
+                    </div>
+
+
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini " data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;fx-line&quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <pre class="prettyprint">$('.ct').codetabs({ fx : 'line' });</pre>
+                        </div>
+                    </div>
+
+                    <a class="label success text-small" href="../templates/tabs.effects.powerline.html" target="_blank">View example</a>
+                </div>
+                <!-- EFFECTS POWERLINE - end
+                .................................................. -->
+
+
+
+
+                <!-- EFFECTS FADE - begin
+                .................................................. -->
+                <div class="ma-b-150">
+                    <h3>EFFECT FADE</h3>
+                    <p>'fade' effect is classic and simplest effect in codetabs.
+                        <br>In old browser not support CSS3, if setup 'One' or 'Out-In' effect will fallback 'fade' effect.</p>
+
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini " data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;fx-fade&quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <pre class="prettyprint">$('.ct').codetabs({ fx : 'fade' });</pre>
+                        </div>
+                    </div>
+
+                    <a class="label success text-small" href="../templates/tabs.effects.fade.html" target="_blank">View example</a>
+                </div>
+                <!-- EFFECTS FADE - end
+                .................................................. -->
+
+            </div>
+            <!-- EFFECTS - end
+            ====================================================== -->
+
+
+
+
+
+
+
+            <div class="hr dash none left ma-b-150"></div>
+
+
+
+
+
+
+
+            <!-- STYLES - begin
+            ====================================================== -->
+            <div id="style" class="ma-b-150">
+                
+                <h1 class="">STYLES</h1>
+                <!-- <p class="ma-b-50">SLider will auto change width/height with ratio when width tabs change.</p> -->
+
+
+
+                <!-- Skin - begin
+                .................................................. -->
+                <div id="skin" class="ma-b-100">
+                    <h3>SKINS</h3>
+                    <p>The current codetabs is provided with 5 skins.
+                        <br>Add 'class-name' to head markup to change the skins of tabs.</p>
+                    
+
+                    <!-- skin FLATBOX -->
+                    <div class="row ma-b-50">
+                        <div class="col-sm-6">
+                            <div class="frame pa-tb-30">
+                                <img src="imgs/skin_flatbox.png" alt="skin flatbox">
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <p class="ma-b-10">skin <i>'.ct-flatbox'</i></p>
+                            <pre class="prettyprint">&lt;div class=&quot;ct ct-flatbox&quot;&gt; ... &lt;/div&gt;</pre>
+                            <a class="label success text-small" href="../templates/tabs.style.flatbox.html" target="_blank">View example</a>
+                        </div>
+                    </div>
+
+
+                    <!-- skin FLAT -->
+                    <div class="row ma-b-50">
+                        <div class="col-sm-6">
+                            <div class="frame pa-tb-50">
+                                <img src="imgs/skin_flat.png" alt="skin flat">
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <p class="ma-b-10">skin <i>'.ct-flat'</i></p>
+                            <pre class="prettyprint">&lt;div class=&quot;ct ct-flat&quot;&gt; ... &lt;/div&gt;</pre>
+                            <a class="label success text-small" href="../templates/tabs.style.flat.html" target="_blank">View example</a>
+                        </div>
+                    </div>
+
+
+                    <!-- skin CLASSIC -->
+                    <div class="row ma-b-50">
+                        <div class="col-sm-6">
+                            <div class="frame pa-tb-50">
+                                <img src="imgs/skin_classic.png" alt="skin classic">
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <p class="ma-b-10">skin <i>'.ct-classic'</i></p>
+                            <pre class="prettyprint">&lt;div class=&quot;ct ct-classic&quot;&gt; ... &lt;/div&gt;</pre>
+                            <a class="label success text-small" href="../templates/tabs.style.classic.html" target="_blank">View example</a>
+                        </div>
+                    </div>
+
+
+                    <!-- skin PILL -->
+                    <div class="row ma-b-50">
+                        <div class="col-sm-6">
+                            <div class="frame pa-tb-50">
+                                <img src="imgs/skin_pill.png" alt="skin pill">
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <p class="ma-b-10">skin <i>'.ct-pill'</i></p>
+                            <pre class="prettyprint">&lt;div class=&quot;ct ct-pill&quot;&gt; ... &lt;/div&gt;</pre>
+                            <a class="label success text-small" href="../templates/tabs.style.pill.html" target="_blank">View example</a>
+                        </div>
+                    </div>
+
+
+                    <!-- skin UNDERLINE -->
+                    <div class="row ma-b-50">
+                        <div class="col-sm-6">
+                            <div class="frame pa-tb-50">
+                                <img src="imgs/skin_underline.png" alt="skin underline">
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <p class="ma-b-10">skin <i>'.ct-underline'</i></p>
+                            <pre class="prettyprint">&lt;div class=&quot;ct ct-underline&quot;&gt; ... &lt;/div&gt;</pre>
+                            <a class="label success text-small" href="../templates/tabs.style.underline.html" target="_blank">View example</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Skin - end
+                .................................................. -->
+
+
+
+                <!-- Size - begin
+                .................................................. -->
+                <div id="size" class="ma-b-100">
+                    <h3>SIZES</h3>
+                    <p>The current codetabs is provided 5 sizes of tablists.
+                        <br>Includes: mini - small - default - large -xlarge
+                        <br>Similar skins, add 'class-name' to head markup to change the sizes of tablists.</p>
+
+                    <pre class="prettyprint">&lt;!-- Size Mini --&gt;
+&lt;div class=&quot;ct ct-flat ct-size-mini&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Size Small --&gt;
+&lt;div class=&quot;ct ct-flat ct-size-small&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Size Default - no add class --&gt;
+&lt;div class=&quot;ct ct-flat&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Size Large --&gt;
+&lt;div class=&quot;ct ct-flat ct-size-large&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Size xLarge --&gt;
+&lt;div class=&quot;ct ct-flat ct-size-xlarge&quot;&gt; ... &lt;/div&gt;</pre>
+
+                    <a class="label success text-small" href="../templates/tabs.sizes.html" target="_blank">View example</a>
+                </div>
+                <!-- Size - end
+                .................................................. -->
+
+
+            </div>
+            <!-- STYLES - end
+            ====================================================== -->
+
+
+
+
+
+
+
+            <div class="hr dash none left ma-b-150"></div>
+
+
+
+
+
+
+
+            <!-- POSITIONS - begin
+            ====================================================== -->
+            <div id="position" class="ma-b-150">
+                
+                <h1 class="">POSITIONS</h1>
+                <p class="ma-b-10">With a combination of 3 options: <i>'dirs'</i>, <i>'pos'</i>, <i>'align'</i> &rarr; to create 14 different positions of tablists.</p>
+                <ul class="list condensed text-code text-small">
+                    <li>dirs : 'hor', 'ver'</li>
+                    <li>pos  &nbsp;: 'top', 'bottom'</li>
+                    <li>align : 'begin', 'center', 'end', 'justified'</li>
+                </ul>
+
+                <!-- Image preview -->
+                <div class="frame frame-bg pa-tb-30 ma-b-100">
+                    <img class="frame-img1" src="imgs/pos.overview.hor.png" alt="tabs hor">
+                    <img class="frame-img2" src="imgs/pos.overview.ver.png" alt="tabs ver">
+                </div>
+
+
+
+                <!-- DIRECTIONS - begin
+                .................................................. -->
+                <div class="ma-b-100">
+                    <h3 class="no-ma">DIRECTIONS</h3>
+                    <p class="">There are 2 directions in Codetabs: horizontal and vertical, corresponding 2 keywords <b>'hor'</b> and <b>'ver'</b>.</p>
+
+
+                    <!-- Image preview -->
+                    <div class="frame frame-bg pa-tb-30 ma-b-50">
+                        <img class="frame-img1" src="imgs/pos.dirs.hor.png" alt="dirs hor">
+                        <img class="frame-img2" src="imgs/pos.dirs.ver.png" alt="dirs ver">
+                    </div>
+                    
+
+                    <!-- Direction HORIZONTAL -->
+                    <p>Horizontal is default direction, needless to setup.</p>
+
+                    <div class="ct ct-pill ct-size-mini ma-b-50" data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;!-- Direction HORIZONTAL setup --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;pag-{ dirs: hor }&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Direction VERTICAL setup --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;pag-{ dirs: ver }&quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <pre class="prettyprint">// Direction HORIZONTAL setup
+$('.ct').codeslider({ pag: { dirs: 'hor' } });
+
+// Direction VERTICAL setup
+$('.ct').codeslider({ pag: { dirs: 'ver' } });</pre>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- DIRECTIONS - end
+                .................................................. -->
+
+
+
+                <!-- POSITIONS - begin
+                .................................................. -->
+                <div class="ma-b-100">
+                    <h3 class="no-ma">POSITION</h3>
+                    <p class="">Each horizontal and vertical directions are included 2 position options: <b>'top'</b> and <b>'bottom'</b>.</p>
+
+
+                    <!-- Image preview -->
+                    <div class="frame frame-bg pa-tb-30 ma-b-50">
+                        <img class="frame-img1" src="imgs/pos.pos.hor.png" alt="pos hor">
+                        <img class="frame-img2" src="imgs/pos.pos.ver.png" alt="pos ver">
+                    </div>
+                    
+
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini ma-b-20" data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;!-- Position TOP setup --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;pag-{ pos: top }&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Position BOTTOM setup --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;pag-{ pos: bottom }&quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <pre class="prettyprint">// Position TOP setup
+$('.ct').codeslider({ pag: { pos: 'top' } });
+
+// Position BOTTOM setup
+$('.ct').codeslider({ pag: { pos: 'bottom' } });</pre>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- POSITIONS - end
+                .................................................. -->
+
+
+
+
+                <!-- ALIGN - begin
+                .................................................. -->
+                <div class="ma-b-100">
+                    <h3 class="no-ma">ALIGN</h3>
+                    <p class="">In each position options, cluster tablists than codetabs have 4 align options: <b>'begin'</b>, <b>'center'</b>, <b>'end'</b> and <b>'justified'</b>.
+                        <br>Vertical directions options not supported <b>'justified'</b> align options.
+                        <br>If the length clusters tablists larger body tabs, codetabs automatically switch on <b>'begin'</b> align options.</p>
+
+
+                    <!-- Image preview -->
+                    <div class="frame frame-bg pa-tb-30 ma-b-50">
+                        <img class="frame-img1" src="imgs/pos.align.hor1.png" alt="align hor 1">
+                        <img class="frame-img2" src="imgs/pos.align.hor2.png" alt="align hor 2">
+                    </div>
+                    
+
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini ma-b-20" data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;!-- Align BEGIN setup --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;pag-{ align: begin }&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Align CENTER setup --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;pag-{ align: center }&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Align END setup --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;pag-{ align: end }&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Align JUSTIFIED setup --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;pag-{ align: justified }&quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <pre class="prettyprint">// Align BEGIN setup
+$('.ct').codeslider({ pag: { align: 'begin' } });
+
+// Align CENTER setup
+$('.ct').codeslider({ pag: { align: 'center' } });
+
+// Align END setup
+$('.ct').codeslider({ pag: { align: 'end' } });
+
+// Align JUSTIFIED setup
+$('.ct').codeslider({ pag: { align: 'justified' } });</pre>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ALIGN - end
+                .................................................. -->
+
+
+            </div>
+            <!-- POSITIONS - end
+            ====================================================== -->
+
+
+
+
+
+
+            <div class="hr dash none left ma-b-150"></div>
+
+
+
+
+
+
+            <!-- SLIDER - begin
+            ====================================================== -->
+            <div class="ma-b-150">
+                <h1>SLIDER</h1>
+
+
+                <!-- Slider options - begin
+                .................................................. -->
+                <div id="slider-opts" class="ma-b-100">
+                    <h3>TABLE OPTIONS</h3>
+
+
+                    <!-- Tuy chon chung - begin -->
+                    <table class="table table-hover table-condensed tb-options">
+                        <!-- <caption><h3>General options</h3></caption> -->
+
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>wSlide</td>
+                                <td><span class="text-info">1</span></td>
+                                <td>Width of center slide compared to width of slider.
+                                    <br>+ Value ​​in range [0-1] is the percentage(%) of slide compared to the slider.
+                                    <br>+ Value greater than 1 is unit 'px'.
+                                    <br>+ Supports 'media' features.</td>
+                            </tr>
+
+                            <tr>
+                                <td>hCode</td>
+                                <td><span class="text-info">null</span></td>
+                                <td>Height of the slider. By default, it depends on the height image-background per slide.</td>
+                            </tr>
+
+                            <tr>
+                                <td>responsive</td>
+                                <td><span class="text-info">null</span></td>
+                                <td>Enable responsive and settings width-begin(or maximum) of the slider.</td>
+                            </tr>
+
+                            <tr>
+                                <td>media</td>
+                                <td><span class="text-info">null</span></td>
+                                <td>+ Set width of image-background in the range width of the page.
+                                    <br>+ Supports multiple range.
+                                    <br>+ Structure: media-[width slide]-[from]-[to]</td>
+                            </tr>
+
+                            <tr>
+                                <td>padding</td>
+                                <td><span class="text-info">0</span></td>
+                                <td>+ Surrounding areas of image-background to slide in th range width of the page.
+                                    <br>+ Support multiply range.
+                                    <br>+ Structure: padding-[value]-[from]-[to]</td>
+                            </tr>
+
+                            <tr>
+                                <td>dirs</td>
+                                <td><span class="text-success">hor</span></td>
+                                <td>Direction swipe gestures on the body content.
+                                    <br>There are 2 directions: hor(horizontal) &amp; ver(vertical).</td>
+                            </tr>
+
+                            <tr>
+                                <td>isCenter</td>
+                                <td><span class="text-error">true</span></td>
+                                <td>Turn on/off layout center in effect 'line'.</td>
+                            </tr>
+
+                            <tr>
+                                <td>isPag</td>
+                                <td><span class="text-error">true</span></td>
+                                <td>Turn on/off pagination(tabs title, bullet...) of codetabs.</td>
+                            </tr>
+
+                            <tr>
+                                <td>isNav</td>
+                                <td><span class="text-error">true</span></td>
+                                <td>Turn on/off navigation codetabs.</td>
+                            </tr>
+
+                            <tr>
+                                <td>isCap</td>
+                                <td><span class="text-error">false</span></td>
+                                <td>Turn on/off caption each slide.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Tuy chon chung - end -->
+
+
+                </div>
+                <!-- Slider options - end
+                .................................................. -->
+
+
+
+
+
+                <!-- Slider setup - begin
+                .................................................. -->
+                <div id="slider-setup" class="ma-b-100">
+                    <h3>BASIC SETUP</h3>
+                    
+                    <p>Settings slider like the tabs, and support simple - the easiest in markup.</p>
+                    <p>1. Markup HTML: class <span class="label success">.ct-slider</span> &rarr; reset to basic style for slider</p>
+                    <pre class="prettyprint ma-b-50">&lt;div class=&quot;ct ct-slider&quot;&gt;
+
+    &lt;!-- Each image is a slide --&gt;
+    &lt;img src=&quot;imgs/image1.jpg&quot; alt=&quot;image1&quot;&gt;
+    &lt;img src=&quot;imgs/image2.jpg&quot; alt=&quot;image2&quot;&gt;
+    &lt;img src=&quot;imgs/image3.jpg&quot; alt=&quot;image3&quot;&gt;
+    ...
+&lt;/div&gt;</pre>
+                    
+                    <p>2. Setting options</p>
+                    
+                    <!-- Tabs option - begin -->
+                    <div class="ct ct-pill ct-size-mini" data-tabs="
+                    isAutoRun-on fx-line speed-200 isSwipe-off">
+
+                        <div>
+                            <div class="ct-pagitem text-mini">HTML5 DATA</div>
+                            <div>
+                                <pre class="prettyprint">&lt;div class=&quot;ct ct-slider&quot; data-codtabs=&quot;
+    isAutoRun-on
+    fxOne-glueHor speed-800
+    pag-{ type: bullet, pos: bottom, align: center } swipe-{ isBody: true } &quot;&gt;
+    ...
+&lt;/div&gt;</pre>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <div class="ct-pagitem text-mini">JAVASCRIPT</div>
+                            <div>
+                                <pre class="prettyprint">$('.ct').codetabs({
+    fxOne : 'glueHor',
+    speed : 800,
+    pag   : { type  : 'bullet',
+              pos   : 'bottom',
+              align : 'center' },
+    swipe : { isBody : true }
+});</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tabs option - end -->
+
+                </div>
+                <!-- Slider setup - end
+                .................................................. -->
+
+
+
+
+                <!-- Image lazyload - begin
+                .................................................. -->
+                <div id="slider-lazyload" class="ma-b-100">
+                    <h3>IMAGE LAZYLOAD</h3>
+                    <p>Addition &lt;img&gt; standard tag, codetabs also supports image lazyload help <b>initialize and display images immediately after the first slide downloaded</b>, no need to waitting for all the images loaded in the slider.</p>
+
+                    <pre class="prettyprint">&lt;!-- Image basic --&gt;
+&lt;img src=&quot;img.jpg&quot; alt=&quot;[img]&quot;&gt;
+
+&lt;!-- Image basic with lazyload --&gt;
+&lt;!-- 'data-src' can be change in 'lazyName' option --&gt;
+&lt;img src=&quot;blank.gif&quot; data-src=&quot;img.jpg&quot; alt=&quot;[img]&quot;&gt;
+
+&lt;!-- Image lazyload using link tag --&gt;
+&lt;a class=&quot;ct-img&quot; href=&quot;img.jpg&quot;&gt;[img]&lt;/a&gt;</pre>
+
+                </div>
+                <!-- Image lazyload - end
+                .................................................. -->
+
+
+
+
+                <!-- Slider responsive - begin
+                .................................................. -->
+                <div id="slider-res" class="ma-b-100">
+                    <h3>RESPONSIVE</h3>
+                    
+                    <p>The default size of the slider: 
+                        <br>+ Width of slider depend on the object containing it. 
+                        <br>+ Height of slider depend on each height of image-background per slide.</p>
+
+                    <p>Responsive slider <b>just installed the original(or maxium) width of the slider</b>. Height/width of image-background will change ratio follow width of the slider.
+                        <br><span class="text-code">responsive-[width]</span></p>
+
+
+                    <!-- Tabs option - begin -->
+                    <div class="ct ct-pill ct-size-mini" data-tabs="
+                    isAutoRun-on fx-line speed-200 isSwipe-off">
+
+                        <div>
+                            <div class="ct-pagitem text-mini">HTML5 DATA</div>
+                            <div>
+                                <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;responsive-940 ...&quot;&gt; ... &lt;/div&gt;</pre>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="ct-pagitem text-mini">JAVASCRIPT</div>
+                            <div>
+                                <pre class="prettyprint">$('.ct').codetabs({
+    responsive : 940,
+    ... 
+});</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tabs option - end -->
+
+
+
+                    
+                    <p>If combine setup height slider, instead of using 'hCode' option, use more second variable in 'responsive' option.
+                        <br><span class="text-code">responsive-[width]-[height]</span></p>
+
+
+                    <!-- Tabs option - begin -->
+                    <div class="ct ct-pill ct-size-mini" data-tabs="
+                    isAutoRun-on fx-line speed-200 isSwipe-off">
+
+                        <div>
+                            <div class="ct-pagitem text-mini">HTML5 DATA</div>
+                            <div>
+                                <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;responsive-940-450 ...&quot;&gt; ... &lt;/div&gt;</pre>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="ct-pagitem text-mini">JAVASCRIPT</div>
+                            <div>
+                                <pre class="prettyprint">$('.ct').codetabs({
+    /* Value is string! */
+    responsive : '940-450',
+    ... 
+});</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tabs option - end -->
+
+                </div>
+                <!-- Slider responsive - end
+                .................................................. -->
+
+
+
+
+                <!-- Slider center - begin
+                .................................................. -->
+                <div id="slider-center" class="ma-b-100">
+                    <h3>CENTER SLIDER</h3>
+                    <p>In 'line' effect, to layout center should <b>set width of middle slide smaller width of slider</b> through 'wSlide' option.
+                        <br><span class="text-code">wSlide-[width slide]</span></p>
+
+
+                    <!-- Tabs option - begin -->
+                    <div class="ct ct-pill ct-size-mini ma-b-50" data-tabs="
+                    isAutoRun-on fx-line speed-200 isSwipe-off">
+
+                        <div>
+                            <div class="ct-pagitem text-mini">HTML5 DATA</div>
+                            <div>
+                                <pre class="prettyprint">&lt;!-- Value ​​in range [0-1] is the percentage(%) of slide compared to the slider --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;fx-line wSlide-0.8 ...&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Value greater than 1 is unit 'px' --&gt;
+&lt;div class=&quot;ct&quot; data-tabs&quot;fx-line wSlide-748 ...&quot;&gt; ... &lt;/div&gt;</pre>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="ct-pagitem text-mini">JAVASCRIPT</div>
+                            <div>
+                                <pre class="prettyprint">$('.ct').codetabs({
+    fx     : 'line',
+    wSlide : 0.8,
+    ... 
+});</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tabs option - end -->
+
+
+
+                    <p class="ma-b-20">Special: 'wSlide' option also supports 'media' features - multi width-values in different width of the page.
+                        <br><span class="text-code">wSlide-[width slide]-[from]-[to]</span></p>
+
+                    <p>Example: Setup center slider với width middle slide change over width of the page.</p>
+                    <ul class="list">
+                        <li>Any width page: width center slide = 70% width slider</li>
+                        <li>Width page range [0 - 480px]: priority width center slide = 300px</li>
+                        <li>Width page range [1200px - 3000px]: priority width center slide = 1156px</li>
+                    </ul>
+
+
+                    <!-- Tabs option - begin -->
+                    <div class="ct ct-pill ct-size-mini" data-tabs="
+                    isAutoRun-on fx-line speed-200 isSwipe-off">
+
+                        <div>
+                            <div class="ct-pagitem text-mini">HTML5 DATA</div>
+                            <div>
+                                <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;
+    fx-line
+    wSlide-0.7 wSlide-300-0-480 wSlide-1156-1200-3000 ...&quot;&gt; ... &lt;/div&gt;</pre>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="ct-pagitem text-mini">JAVASCRIPT</div>
+                            <div>
+                                <pre class="prettyprint">$('.ct').codetabs({
+    fx     : 'line',
+    wSlide : [0.7, '300-0-480', '1156-1200-3000'],
+    ... 
+});</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tabs option - end -->
+
+                    <a class="label success" href="../templates/slider.center.html" target="_blank">View example</a>
+                </div>
+                <!-- Slider center - end
+                .................................................. -->
+
+
+
+
+
+
+                <!-- Slider caption - begin
+                .................................................. -->
+                <div id="slider-caption" class="ma-b-100">
+                    <h3>CAPTION</h3>
+
+
+                    <!-- Caption setup - begin -->
+                    <div id="cap-setup" class="ma-b-50">
+                        <p>1. Turn on
+                            <br>Caption is description of slide, each slide have a caption.
+                            <br>Show caption, set value <b>'true/on/1'</b> boolean for 'isCap' option:
+                        </p>
+                        
+                        <!-- Tabs option - begin -->
+                        <div class="ct ct-pill ct-size-mini" data-tabs="
+                        isAutoRun-on fx-line speed-200 isSwipe-off">
+
+                            <div>
+                                <div class="ct-pagitem text-mini">HTML5 DATA</div>
+                                <div>
+                                    <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;isCap-on ...&quot;&gt; ... &lt;/div&gt;</pre>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="ct-pagitem text-mini">JAVASCRIPT</div>
+                                <div>
+                                    <pre class="prettyprint">$('.ct').codetabs({ isCap : true });</pre>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tabs option - end -->
+                        
+                    </div>
+                    <!-- Slider center - end
+                    .................................................. -->
+
+
+
+                    <!-- Caption content - begin -->
+                    <div id="cap-content" class="ma-b-100">
+                        <p>2. HTML markup
+                            <br>Caption have many ways to setup markup.</p>
+                        <pre class="prettyprint">&lt;div class=&quot;ct&quot;&gt;
+
+        &lt;!-- Caption on alt image-background --&gt;
+        &lt;img src=&quot;img1.jpg&quot; alt=&quot;This is caption slide1&quot;&gt;
+
+        &lt;!-- Caption in image-background using link tag --&gt;
+        &lt;a class=&quot;ct-img&quot; href=&quot;img2.jpg&quot;&gt;This is caption &lt;b&gt;slide2&lt;/b&gt;&lt;/a&gt;
+
+        &lt;!-- Caption in element with class .ct-capitem --&gt;
+        &lt;div&gt;
+            &lt;img src=&quot;img3.jpg&quot; alt=&quot;this caption will ignore&quot;&gt;
+            &lt;div class=&quot;ct-capitem&quot;&gt;
+                &lt;h4&gt;This is caption slide3&lt;/h4&gt;
+                &lt;p&gt;More content of caption slide3...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</pre>
+                        
+                        <a class="label success" href="../templates/slider.caption.html" target="_blank">View example</a>
+                    </div>
+                    <!-- Caption content - end -->
+
+                </div>
+                <!-- Slider caption - end
+                .................................................. -->
+
+                
+            </div>
+            <!-- SLIDER - end
+            ====================================================== -->
+
+
+
+
+
+
+            <div class="hr dash none left ma-b-150"></div>
+
+
+
+
+
+
+            <!-- SLIDESHOW - begin
+            ====================================================== -->
+            <div class="ma-b-150">
+                <h1 class="">SLIDESHOW</h1>
+
+
+                <!-- Slideshow setup - begin
+                .................................................. -->
+                <div id="ss-basic" class="ma-b-150">
+                    <h3>BASIC SETUP</h3>
+
+                    <!-- Image preview -->
+                    <div class="frame frame-bg pa-tb-30">
+                        <img class="" src="imgs/slideshow.png" alt="slideshow preview">
+                    </div>
+                    
+                    <ul class="list condensed">
+                        <li>Turn on slideshow by setup options <b>'isSlideshow : true'</b>. Default options is <i>'isSlideshow : false'</i>.</li>
+                        <li>The time to switch between slides are setted with <b>'delay'</b> options in <b>'slideshow'</b> object options. Unit is milliseconds(ms).</li>
+                        <li>Add style for timer by 'class-name' to head markup codetabs &rarr; i.e. <i>'.ct-arcline'</i></li>
+                    </ul>
+                    
+
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini" data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;!-- Combine add style for timer and turn on slideshow --&gt;
+&lt;div class=&quot;ct ct-arcline&quot; data-tabs=&quot;isSlideshow-true slideshow-{ delay: 5000 }&quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <div class="prettyall">
+                                <pre class="prettyprint">&lt;!-- Setup style for timer --&gt;
+&lt;div class=&quot;ct ct-arcline&quot;&gt; ... &lt;/div&gt;</pre>
+                                <pre class="prettyprint">// Setup option for slideshow
+$('.ct').codetabs({
+    isSlideshow : true,
+    slideshow   : { delay : 5000 }
+});</pre>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <a class="label success text-small" href="../templates/tabs.slideshow.timerArc.html" target="_blank">View example</a>
+                </div>
+                <!-- Slideshow setup - end
+                .................................................. -->
+
+
+
+
+                <!-- Timer ARC - begin
+                .................................................. -->
+                <div id="ss-timer-arc" class="ma-b-150">
+                    <h3>TIMER ARC</h3>
+                    <p><b>'arc'</b> timer is defalut timer in codetabs, simple and flat design.</p>
+
+                    <!-- Image preview -->
+                    <div class="frame frame-bg pa-tb-30">
+                        <img class="" src="imgs/timer.arc.png" alt="timer arc">
+                    </div>
+                    
+                    
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini" data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;!-- Setup style and type for timer --&gt;
+&lt;div class=&quot;ct ct-arcline&quot; data-tabs=&quot;slideshow-{ timer: arc }&quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <div class="prettyall">
+                                <pre class="prettyprint">&lt;!-- Setup style for timer --&gt;
+&lt;div class=&quot;ct ct-arcline&quot;&gt; ... &lt;/div&gt;</pre>
+                                <pre class="prettyprint">// Setup type for timer
+$('.ct').codetabs({
+    slideshow : { timer : 'arc' }
+});</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="no-ma">Note:</p>
+                    <ul class="list condensed ma-b-100">
+                        <li>Class <b>'.ct-arcline'</b> : customized size, position of timer and play/pause button.</li>
+                        <li><b>'timer : arc'</b> options in <i>'slideshow'</i> object : type of timer.</li>
+                    </ul>
+                    
+                    
+                    <!-- Timer arc customize - begin -->
+                    <h4>Customization of the <b>'arc' object</b></h4>
+                    <p>The options in <b>'arc' object</b> used to customize color, thickness, size of circle timer.
+                        <br>Arc timer included <b>'Inner' circle</b> and <b>'Outer' circle</b>. Each circle are 4 options in 'arc' object.
+                        <br>'Inner' circle used to display the time loop in slideshow.
+                        <br>'Outer' circle used to decorate or background.</p>
+                    <div class="frame frame-bg pa-tb-30">
+                        <img class="frame-img1" src="imgs/arc.detail.png" alt="timer arc">
+                        <img class="frame-img2" src="imgs/arc.circle.png" alt="timer arc">
+                    </div>
+                    
+
+                    <table class="table table-hover table-condensed tb-options ma-b-50">
+                        <!-- <caption><h5>Timer arc options</h5></caption> -->
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>width</td>
+                                <td><span class="">null</span></td>
+                                <td>Width of timer</td>
+                            </tr>
+
+                            <tr>
+                                <td>height</td>
+                                <td><span class="">null</span></td>
+                                <td>Height of timer</td>
+                            </tr>
+
+                            <tr>
+                                <td>fps</td>
+                                <td><span class="text-info">30</span></td>
+                                <td>The number of updates 'inner' circle in 1 second.</td>
+                            </tr>
+
+                            <tr>
+                                <td>rotate</td>
+                                <td><span class="text-info">0</span></td>
+                                <td>Initial angle of rotation of 'inner' circle.</td>
+                            </tr>
+
+                            <tr>
+                                <td>radius</td>
+                                <td><span class="text-info">14</span></td>
+                                <td>The radius of 'inner' circle.</td>
+                            </tr>
+
+                            <tr>
+                                <td>weight</td>
+                                <td><span class="text-info">2</span></td>
+                                <td>Thickness border of 'inner' circle.</td>
+                            </tr>
+
+                            <tr>
+                                <td>stroke</td>
+                                <td><span class="text-success">#fff</span></td>
+                                <td>Color border of 'inner' circle, format same css.</td>
+                            </tr>
+
+                            <tr>
+                                <td>fill</td>
+                                <td><span class="text-success">transparent</span></td>
+                                <td>Color background of 'inner' circle, format same css.</td>
+                            </tr>
+
+
+                            <!-- table row blank -->
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+
+                            <tr>
+                                <td>oRadius</td>
+                                <td><span class="text-info">14</span></td>
+                                <td>The radius of 'outer' circle.</td>
+                            </tr>
+
+                            <tr>
+                                <td>oWeight</td>
+                                <td><span class="text-info">2</span></td>
+                                <td>Thickness border of 'outer' circle.</td>
+                            </tr>
+
+                            <tr>
+                                <td>oStroke</td>
+                                <td><span class="text-success">hsla(0,0%,0%,0.2)</span></td>
+                                <td>Color border of 'outer' circle, format same css.</td>
+                            </tr>
+
+                            <tr>
+                                <td>oFill</td>
+                                <td><span class="text-success">transparent</span></td>
+                                <td>Color background of 'outer' circle, format same css.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
+                    <p class="ma-b-10">Code sample cho customize timer arc</p>
+                    <div class="ct ct-pill ct-size-mini ma-b-50" data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off"> 
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;div class=&quot;ct ct-arcline&quot; data-tabs=&quot;
+    arc-{ stroke: #0cf, radius: 14, oStroke: #e5e5e5, oRadius: 14, oWeight: 2 }
+    &quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <pre class="prettyprint">$('.ct').codetabs({
+    arc : { 
+            stroke  : '#0cf',
+            radius  : 14,
+            oStroke : '#e5e5e5',
+            oRadius : 14,
+            oWeight : 2
+          }
+});</pre>
+                        </div>
+                    </div>
+                    <!-- Timer arc customize - end -->
+
+                </div>
+                <!-- Timer ARC - end
+                .................................................. -->
+
+
+
+
+                <!-- Timer Others - begin
+                .................................................. -->
+                <div id="ss-timer-other" class="ma-b-150">
+                    <h3>OTHER TIMERS</h3>
+                    <p>Including <b>'bar' timer</b> and <b>'number' timer</b>, fully customizable by <b>CSS</b>.</p>
+
+                    <!-- Image preview -->
+                    <div class="frame frame-bg pa-tb-30">
+                        <img class="frame-img1" src="imgs/timer.bar.png" alt="timer bar">
+                        <img class="frame-img2" src="imgs/timer.number.png" alt="timer number">
+                    </div>
+                    
+
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini" data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off">
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;!-- Setup style va options cho timer BAR --&gt;
+&lt;div class=&quot;ct ct-barless&quot; data-tabs=&quot;slideshow-{ timer: bar }&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Setup style va options cho timer NUMBER --&gt;
+&lt;div class=&quot;ct ct-numless&quot; data-tabs=&quot;slideshow-{ timer: number }&quot;&gt; ... &lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <div class="prettyall">
+                                <pre class="prettyprint">&lt;!-- Setup style for timer --&gt;
+&lt;div class=&quot;ct ct-arcline&quot;&gt; ... &lt;/div&gt;</pre>
+                                <pre class="prettyprint">// Setup optons cho timer BAR
+$('.ct').codetabs({ slideshow : { timer: 'bar' } });
+
+// Setup optons cho timer NUMBER
+$('.ct').codetabs({ slideshow : { timer: 'number' } });</pre>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <a class="label success text-small" href="../templates/tabs.slideshow.timerBar.html" target="_blank">Timer bar</a>
+                    <a class="label success text-small" href="../templates/tabs.slideshow.timerNumber.html" target="_blank">Timer number</a>
+                </div>
+                <!-- Timer Others - end
+                .................................................. -->
+
+
+
+
+                <!-- Other options - begin
+                .................................................. -->
+                <div id="ss-other" class="ma-b-150">
+                    <h3>OTHER OPTIONS</h3>
+                    <p class="ma-b-10">List of other options in <b>'slideshow' object</b></p>
+                    
+                    
+                    <table class="table table-hover table-condensed tb-options ma-b-50">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>isAutoRun</td>
+                                <td><span class="text-error">true</span></td>
+                                <td>Automatically run slideshow when codetabs initialize.</td>
+                            </tr>
+
+                            <tr>
+                                <td>isPlayPause</td>
+                                <td><span class="text-error">true</span></td>
+                                <td>Turn on/off button 'playpause'</td>
+                            </tr>
+
+                            <tr>
+                                <td>isTimer</td>
+                                <td><span class="text-error">true</span></td>
+                                <td>Turn on/off timer</td>
+                            </tr>
+
+                            <tr>
+                                <td>isRandom</td>
+                                <td><span class="text-error">false</span></td>
+                                <td>Features run random next slide in slideshow.</td>
+                            </tr>
+
+                            <tr>
+                                <td>isHoverPause</td>
+                                <td><span class="text-error">false</span></td>
+                                <td>Features mouse-hover on tabs to automatically pause slideshow.</td>
+                            </tr>
+
+                            <tr>
+                                <td>isRunInto</td>
+                                <td><span class="text-error">true</span></td>
+                                <td>Features only run slideshow when tabs display in view-screen, outside view-screen automatically pause slideshow.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!-- Other Options - end
+                .................................................. -->
+
+            </div>
+            <!-- SLIDESHOW - end
+            ====================================================== -->
+
+
+
+
+
+
+
+            <div class="hr dash none left ma-b-150"></div>
+
+
+
+
+
+
+
+            <!-- MARKUP - begin
+            ====================================================== -->
+            <div id="markup" class="ma-b-150">
+
+                <h1 class="">MARKUP</h1>
+
+
+                <!-- Markup render - begin -->
+                <div id="render" class="ma-b-150">
+                    <h3>Markup render</h3>
+                    <p>Structured markup after rendering in the page &rarr; support set <b>css</b> in codetabs.</p>
+
+                    <p><b>Markup and class in codetabs before render</b></p>
+                    <pre class="prettyprint ma-b-50">&lt;div class=&quot;ct&quot; data-tabs=&quot;isAutoRun-on fxOne-stickVer&quot;&gt;
+    
+    &lt;!-- Slide 1 of tabs --&gt;
+    &lt;div&gt;
+        &lt;div class=&quot;ct-pagitem&quot;&gt; Title slide 1 ... &lt;/div&gt;
+        &lt;div&gt; Content of slide 1 - any HTML ... &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Slide 2,3 same slide 1 --&gt;
+    ...
+&lt;div&gt;</pre>
+
+
+                    <p><b>Markup and class in codetabs after render</b>
+                        <br>Include pagination, navigation and caption elements</p>
+                    <pre class="prettyprint ma-b-50">&lt;div class=&quot;ct ct-ready ct-dot ct-height-auto ct-pag-hor ct-pag-top&quot;&gt; &lt;!-- markup: codetabs --&gt;
+
+    &lt;!-- MAIN SLIDES --&gt;
+    &lt;div class=&quot;ct-viewport&quot;&gt; &lt;!-- markup: viewport --&gt; 
+        &lt;div class=&quot;ct-canvas&quot;&gt; &lt;!-- markup: canvas --&gt;
+            
+            &lt;div class=&quot;ct-slide ct-ready&quot;&gt; ... &lt;/div&gt; &lt;!-- markup: slide --&gt;
+            &lt;div class=&quot;ct-slide ct-ready ct-cur&quot;&gt; ... &lt;/div&gt;
+            &lt;div class=&quot;ct-slide ct-ready&quot;&gt; ... &lt;/div&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;!-- PAGINATION --&gt;
+    &lt;div class=&quot;ct-pag ct-tab ct-pag-hor ct-pag-top&quot;&gt; &lt;!-- markup: pag-head --&gt;
+        &lt;div class=&quot;ct-paginner&quot;&gt; &lt;!-- markup: pag-inner --&gt;
+            
+            &lt;div class=&quot;ct-pagitem&quot;&gt; ... &lt;/div&gt; &lt;!-- markup: pag-item --&gt;
+            &lt;div class=&quot;ct-pagitem ct-cur&quot;&gt; ... &lt;/div&gt;
+            &lt;div class=&quot;ct-pagitem&quot;&gt; ... &lt;/div&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;!-- NAVIGATION --&gt;
+    &lt;div class=&quot;ct-nav&quot;&gt; &lt;!-- markup: nav-head --&gt;
+        &lt;div class=&quot;ct-prev&quot;&gt;prev&lt;/div&gt;
+        &lt;div class=&quot;ct-next&quot;&gt;next&lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;!-- CAPTION --&gt;
+    &lt;div class=&quot;ct-cap&quot;&gt; &lt;!-- markup: cap-head --&gt;
+        &lt;div class=&quot;ct-capinner&quot;&gt; &lt;!-- markup: cap-inner --&gt;
+            &lt;div class=&quot;ct-cap-cur&quot;&gt; ... &lt;/div&gt;
+            &lt;div class=&quot;ct-cap-last&quot;&gt; ... &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;!-- MEDIA --&gt;
+    &lt;div class=&quot;ct-media&quot;&gt; &lt;!-- markup: media --&gt;
+        &lt;div class=&quot;ct-playpause ct-actived&quot;&gt;play/pause&lt;/div&gt; &lt;!-- markup: playpause --&gt;
+        &lt;div class=&quot;ct-timer ct-timer-bar&quot;&gt; &lt;!-- markup: timer-head --&gt;
+            &lt;div class=&quot;ct-timeritem&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;</pre>
+                    <p><strong>Detailed description of the class is added: </strong></p>
+                    <p>@ Markup codetabs</p>
+                    <ul class="list">
+                        <li>class <span class="label">.ct-ready</span>: will be added when first slide of codetabs complete loaded, and codetabs began to appear in browser.</li>
+                        <li>class <span class="label">.ct-dot</span> : type effect of codetabs. Effect 'one', 'out-in' and 'fade' are 'dot' type, also 'powerline' effect is 'line' type.</li>
+                        <li>class <span class="label">.ct-height-auto</span> : type height of codetabs, include 2 option - 'height-auto' and 'height-fixed'.</li>
+                        <li>class <span class="label">.ct-pag-hor</span> : will be added when pagination turn on. Direction of pagination, include 2 options: 'pag-hor' for horizontal direction, 'pag-ver' for vertical direction.</li>
+                        <li>class <span class="label">.ct-pag-top</span> : will be added when pagination turn on. Position of pagination, include 2 options: 'pag-top' and 'pag-bottom'</li>
+                    </ul>
+                    <br>
+
+                    <p>@ Markup viewport
+                        <br>Container all slide, often used to css of slide area</p>
+                    <br>
+
+                    <p>@ Markup canvas
+                        <br>This markup only used for codetabs system, don't css on this markup.</p>
+                    <br>
+
+                    <p>@ Markup slide</p>
+                    <ul class="list">
+                        <li>class <span class="label">.ct-ready</span>: will be added when all images on slide are complete loaded</li>
+                        <li>class <span class="label">.ct-cur</span>: will be added when this markup is current slide to appear codetabs</li>
+                    </ul>
+                    <br>
+
+                    <p>@ Markup pag-head</p>
+                    <ul class="list">
+                        <li>class <span class="label">.ct-tab</span>: type of pagination, include 'tab' - 'bullet' - 'thumb'</li>
+                        <li>class <span class="label">.ct-pag-hor &nbsp; .ct-pag-top</span>: similar class on <strong>@ markup codetabs</strong>, direction and position of pagination. 2 classes are added to ensure css pagination outside the codetabs</li>
+                    </ul>
+                    <br>    
+
+                    <p>@ Markup pag-inner
+                        <br>This markup only used for codetabs system, don't css on this markup.</p>
+                    <br>
+
+                    <p>@ Markup pag-item</p>
+                    <ul class="list">
+                        <li>class <span class="label">.ct-cur</span>: will be added when this markup is current pagination-item selected.</li>
+                    </ul>
+                    <br>
+
+                    <p>@ Markup cap-inner
+                        <br>This markup only used for codetabs system, don't css on this markup.</p>
+                    <br>
+
+                    <p>@ Markup playpause
+                        <br>Button play/pause in slideshow</p>
+                    <ul class="list">
+                        <li>class <span class="label">.ct-actived</span>: will be added when users switch to <strong>stop</strong> state</li>    
+                    </ul>
+                    <br>
+
+                    <p>@ Markup timer-head</p>
+                    <ul class="list">
+                        <li>class <span class="label">.ct-timer-bar</span>: type of timer, include 'timer-arc' - 'timer-bar' - 'timer-number'</li>
+                    </ul>
+                    <br>
+
+                    <p>@ Markup timer-item
+                        <br>This markup described the current time taking place in the slideshow.
+                        <br>Depending on type of timer, tagName timer-item change as well:
+                    </p>
+                    <ul class="list">
+                        <li>'canvas' tagName for timer-arc</li>
+                        <li>'div' tagname for timer-bar</li>
+                        <li>'span' tagName for timer-number</li>
+                    </ul>
+
+
+                </div>
+                <!-- Markup render - end -->
+
+
+
+                <!-- Markup outside - begin -->
+                <div id="outside" class="ma-b-150">
+                    <h3>Outside Markup</h3>
+                    <p>The components: navigation, title tabs(pagination), timer... can set up markup in any location on site.
+                        <br>Support freedom of layout, adding 'class-name' on  the components.</p>
+                    
+                    <p class="no-ma">Setup of outside markup:</p>
+                    <ul class="list condensed">
+                        <li>First, naming codetabs with any name(no space) via <span class="label code">name</span> option.</li>
+                        <li>Second, named similarly to components with markup outside.</li>
+                    </ul>
+
+                    <pre class="prettyprint">&lt;!-- Main markup of tabs1 - with name 'tabs1' --&gt;
+&lt;div class=&quot;ct&quot; data-tabs=&quot;name-tabs1&quot;&gt; ... &lt;/div&gt;
+
+...
+
+&lt;!-- Setup markup title of tabs1 --&gt;
+&lt;div class=&quot;ct-pag&quot; data-tabs=&quot;name-tabs1&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Setup markup navigation of tabs1 --&gt;
+&lt;div class=&quot;ct-nav&quot; data-tabs=&quot;name-tabs1&quot;&gt; ... &lt;/div&gt;
+
+&lt;!-- Setup markup timer of tabs1 --&gt;
+&lt;div class=&quot;ct-timer&quot; data-tabs=&quot;name-tabs1&quot;&gt; ... &lt;/div&gt;</pre>
+                </div>
+                <!-- Markup outside - end -->
+                
+            </div>
+            <!-- MARKUP - end
+            ====================================================== -->
+
+
+
+
+
+
+            <div class="hr dash none left ma-b-150"></div>
+
+
+
+
+
+
+            <!-- OTHERS - begin
+            ====================================================== -->
+            <div id="other" class="ma-b-150">
+                <h1 class="">OTHERS</h1>
+
+
+
+                <!-- Media - begin
+                .................................................. -->
+                <div id="media" class="ma-b-150">
+                    <h3>Media</h3>
+                    <h4>Load Ajax</h4>
+
+                    <p>Download the slides content by ajax method (same domain).
+                        <br>+ Setup URL content to be loaded to 'ajax' property into 'media' object.</p>
+
+                    <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;isAutoRun-on&quot;&gt;
+    
+    &lt;!-- Slide 1 --&gt;
+    &lt;div data-slide=&quot;media-{ ajax: url-content }&quot;&gt;
+        
+        &lt;!-- Pagination item of slide 1 --&gt;
+        &lt;div class=&quot;ct-pagitem&quot;&gt;Title slide 1 ...&lt;/div&gt;
+    &lt;/div&gt;
+
+    ...
+&lt;/div&gt;</pre>
+                    
+                    <a class="label success text-small" href="../templates/tabs.media.ajax.html" target="_blank">View example</a>
+                </div>
+                <!-- Media - end
+                .................................................. -->
+
+
+
+
+
+
+                <!-- Deep linking - begin
+                .................................................. -->
+                <div id="deeplinking" class="ma-b-150">
+                    <h3>Deep linking</h3>
+
+                    <p class="ma-b-50">Deep linking will append new hash #codeID_slideID on URL when switch slide. It easy linking or bookmark specific slide.
+                        <br>Deep linking also support multi-linking in the same page.</p>
+                    
+                    <p>List options in 'deeplinking' object:</p>
+                    <table class="table table-hover table-condensed tb-options ma-b-50">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>prefixDefault</td>
+                                <td><span class="text-success">['code', 'slide']</span></td>
+                                <td>Only setup by JAVASCRIPT object.
+                                    <br>Prefix 0 is name of codetabs, support multi-liking on the same page.
+                                    <br>Prefix 1 is name of slide on that codetabs.</td>
+                            </tr>
+
+                            <tr>
+                                <td>prefix</td>
+                                <td><span class="text-success">null</span></td>
+                                <td>Prefix of #hash combine with order of slide, begin by 0.</td>
+                            </tr>
+
+                            <tr>
+                                <td>isIDConvert</td>
+                                <td><span class="text-error">true</span></td>
+                                <td>Deeplinking auto convert ID of slide to #hash corresponds on URL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini ma-b-50" data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off">
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">// prefixDefault deep-linking only setup in JAVASCRIPT
+&lt;div class=&quot;ct&quot; data-tabs=&quot;isDeeplinking-on ...&quot;&gt;
+    ...
+&lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <pre class="prettyprint">$('.ct').codetabs({
+    isDeeplinking : true,
+    deeplinking   : { prefixDefault: ['gallery', 'tab'] },
+    ... 
+});</pre>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Deep linking ID - begin -->
+                    <h4>Deep linking ID</h4>
+                    <p>Deeplinking auto convert ID of slide to #hash corresponds on URL</p>
+
+                    <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;isAutoRun-on isDeeplinking-on&quot;&gt;
+    
+    &lt;!-- Slides --&gt;
+    &lt;div id=&quot;swipe-gestures&quot;&gt;...&lt;/div&gt;
+    &lt;div id=&quot;huge-effect&quot;&gt;...&lt;/div&gt;
+    &lt;div id=&quot;flat-design&quot;&gt;...&lt;/div&gt;
+    &lt;div id=&quot;true-tabs&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+                    <a class="label success text-small" href="../templates/tabs.api.deeplinkingID.html" target="_blank">View example</a>
+
+                </div>
+                <!-- Deep linking - begin
+                .................................................. -->
+
+
+
+
+
+
+                <!-- Cookie - begin
+                .................................................. -->
+                <div id="cookie" class="ma-b-150">
+                    <h3>Cookie</h3>
+
+                    <p>Storage and recovery of the last slide in cookie.</p>
+                    <ul class="list ma-b-50">
+                        <li>Cookie features don't work in file offline.</li>
+                        <li>Avoid conflict with other tabs on different pages, make a unique name for tabs via 'name' option.</li>
+                    </ul>
+                    
+                    <p>List options in 'cookie' object:</p>
+                    <table class="table table-hover table-condensed tb-options ma-b-50">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Default value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>name</td>
+                                <td><span class="text-success">""</span></td>
+                                <td>Unique name of cookie to stored codetabs, avoid conflict with other cookies on different pages. Default is empty-string.</td>
+                            </tr>
+
+                            <tr>
+                                <td>days</td>
+                                <td><span class="text-info">7</span></td>
+                                <td>Days storing of cookie on the browser</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <!-- Code sample -->
+                    <div class="ct ct-pill ct-size-mini" data-tabs="isAutoRun-on fx-line speed-200 isSwipe-off">
+                        <div>
+                            <span class="ct-pagitem text-mini">HTML5 DATA</span>
+                            <pre class="prettyprint">&lt;div class=&quot;ct&quot; data-tabs=&quot;isCookie-on cookie-{ name: tabsCookie1 } ...&quot;&gt;
+    ...
+&lt;/div&gt;</pre>
+                        </div>
+                        
+                        <div>
+                            <span class="ct-pagitem text-mini">JAVASCRIPT</span>
+                            <pre class="prettyprint">$('.ct').codetabs({
+    isCookie : true,
+    cookie   : { name: 'tabsCookie1' },
+    ... 
+});</pre>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Cookie - end
+                .................................................. -->
+
+
+
+                
+
+                <!-- APIs - begin
+                .................................................. -->
+                <div id="api" class="ma-b-150">
+                    <h3>APIs</h3>
+                    
+                    <p><span class="subtitle">Public methods</span></p>
+                    <pre class="prettyprint ma-b-50">/* All public medthods can be called
+$('.ct').codetabs('next');
+$('.ct').codetabs('goTo', 3);
+
+/* You can be create instance codetabs data and many call quickly */
+var code = $('.ct').data('codetabs');
+
+code.next();                        // Next slide
+code.prev();                        // Previous slide
+code.first();                       // Goto first slide
+code.last();                        // Goto last slide
+code.goTo(id);                      // Goto slide id number, begin 0
+
+code.prop(opts [, isNoRefresh]);    // Auto update options and refresh tabs
+                                    // Example: code.prop({ speed: 1200, fx: 'fade' });
+code.refresh();                     // Refresh tabs
+code.destroy([isDelete]);           // Removes all events and clears all data on tabs
+
+code.play();                        // Play slideshow
+code.pause();                       // Pause slideshow
+code.stop();                        // Stop slideshow
+
+code.addSlide(obj [, index]);       // Add new slide. If 'index' is empty, the new slide will auto add at the end
+code.removeSlide([index]);          // Remove the slide at 'index' position.
+
+code.swipeEvent(objName);           // Register or remove swipe event on object
+                                    // 'onBody'  : register swipe event on body tabs
+                                    // 'offBody' : remove swipe event on body tabs
+                                    // 'onPag'   : register swipe event on pagination
+                                    // 'offPag'  : remove swipe event on pagination</pre>
+
+
+                    
+                    <p><span class="subtitle">Public properties</span></p>
+                    <pre class="prettyprint ma-b-50">code.width();                       // Return width tabs
+code.height();                      // Return height tabs
+code.curId();                       // Return slide current id
+code.slideLenght();                 // Return lenght of slides
+code.slideCur();                    // Return object jQuery of slide current
+code.opts();                        // Return object all options
+code.varible();                     // Return object all varible in tabs
+code.isMobile();                    // Return boolean value, the device is mobile?
+code.browser();                     // Return name of browser used
+code.ev;                            // Return object events in tabs</pre>
+
+
+                    
+                    <p><span class="subtitle">Callback events</span></p>
+                    <pre class="prettyprint ma-b-50">code.ev.on('start', function() { ... });            // Trigger slide begin of tabs fire
+code.ev.on('end', function() { ... });              // Trigger slide end of tabs fire
+code.ev.on('before', function() { ... });           // Trigger before transition move to slide
+code.ev.on('after', function() { ... });            // Trigger after transition move to slide
+code.ev.on('loadBegin', function(e, $slide, ID) { ... });   // Trigger slide begin loadding, return current slide object and ID
+code.ev.on('loadEnd', function(e, $slide, ID) { ... });     // Trigger slide loaded, return current slide object and ID
+code.ev.on('loadSlide.id', function() { ... });     // Trigger if slide id loaded
+code.ev.on('loadAll', function() { ... });          // Trigger if all image in tabs loaded
+code.ev.on('resize', function() { ... });           // Trigger when window resize
+code.ev.on('init', function() { ... });             // Trigger when codetabs initialized
+code.ev.on('selectID', function(e, ID) { ... });    // Trigger when switch to new slide and return ID selected
+code.ev.on('deselectID', function(e, ID) { ... });  // Trigger when switch to new slide and return ID deselected
+code.ev.on('swipeBegin', function() { ... });       // Trigger when begin swipe gestures
+code.ev.on('swipeEnd', function() { ... });         // Trigger when end swipe gestures
+code.ev.on('fxBegin', function() { ... });          // Trigger fx switch slide begin running
+code.ev.on('fxEnd', function() { ... });            // Trigger fx switch slide end running</pre>
+                </div>
+                <!-- APIs - end
+                .................................................. -->
+
+
+
+
+                <!-- Logs - begin
+                .................................................. -->
+                <div id="log" class="ma-b-150">
+                    <h3>Changelogs</h3>
+
+
+                    <div class="ma-b-50">
+                        <h6 class="text-code bold">Version 3.0 | 28.11.2014</h6>
+                        <p class="log">+ Added: new 4 templates: tabs in fancybox, deeplinking ID, media load ajax, api add ajax.
+                            <br>+ Added: api 'destroy'
+                            <br>+ Added: api 'swipeEvent'
+                            <br>+ Added: load ajax and image lazyload
+                            <br>+ Added: fx 'none'
+                            <br>+ Added: new 'begin', 'center', 'centerRight', end propteries into 'idBegin' option
+                            <br>+ Added: description of main color in documentation
+                            <br>+ Improved: deeplinking auto detect ID and convert to #hash on url
+                            <br>+ Improved: resize event
+                        </p>
+                    </div>
+
+                    <div class="ma-b-50">
+                        <h6 class="text-code bold">Version 2.2 | 08.08.2014</h6>
+                        <p class="log">+ Added: new 4 templates: highlight, fullcolor, deeplinking, cookie
+                            <br>+ Added: deeplinking, cookie, classAdd options
+                            <br>+ Added: animate effect on caption when switch slide
+                            <br>+ Added: detail description in 'markup > render' in documentation
+                            <br>+ Improved: fade effect fallback in old browser(&lt;=IE9)
+                            <br>+ Improved: remove unnecessary effects on mobile
+                            <br>+ Changed: unlock codetabs when js no enable, more SEO friendly
+                            <br>+ Changed: name 'arc.update' 'acr.fps' options
+                            <br>+ Changed: prefixed in 'code.animate.css' file
+                            <br>+ Fixed: 'overflow: hidden' in Android browser
+                            <br>+ Fixed: auto run pagitem when codetabs only have 2 slide
+                            <br>+ Fixed: many slide at the same time 'selected'
+                            <br>+ Fixed: render font in safari 5.1 windows
+                            <br>+ Fixed: position swipe gestures in opera 12
+                            <br>+ Fixed: stop drag-text when swipe gestures in IE7-8
+                        </p>
+                    </div>
+
+                    <div class="ma-b-50">
+                        <h6 class="text-code bold">Version 2.1 | 20.07.2014</h6>
+                        <p class="log">+ Improved: swipe gestures on mobile device, no lag, faster 200%.
+                            <br>+ Changed: some slider templates
+                            <br>+ Added: video tutorial on 'how to' page
+                        </p>
+                    </div>
+                    
+                    <div class="ma-b-50">
+                        <h6 class="text-code bold">Version 2.0 | 16.07.2014</h6>
+                        <p class="log">+ Initial version</p>
+                    </div>
+                </div>
+                <!-- Logs - end
+                .................................................. -->
+
+            </div>
+                
+            <!-- OTHERS - end
+            ====================================================== -->
+
+
+
+        </div>
+
+    </div>
+    </div>
+    <!-- /////////////////////////////////////////////////////////
+        Body content - end
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+
+
+    <!-- /////////////////////////////////////////////////////////
+        Footer - begin
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+    <div class="wrapper footer">
+    <div  class="container">
+    <div class="row">
+
+        <!-- Copyright -->
+        <section class="copyright">
+            <p>&copy; 2014 Thystudio. All Rights Reserved.</p>
+        </section>
+    
+    </div>
+    </div>
+    </div>
+    <!-- /////////////////////////////////////////////////////////
+        Footer - end
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+    
+
+    <!-- Script link - begin
+    ============================================================== -->
+    <script src="../libs/scripts/jquery-1.11.1.min.js"></script> <!-- jQuery Libary -->
+    <script src="../libs/scripts/prettify.min.js"></script> <!-- Google Code Prettify -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script> <!-- Bootstrap plugin -->
+    <script src="../code/codetabs.js"></script> <!-- Codetabs Plugins -->
+
+
+    <!-- Javascript code -->
+    <script> prettyPrint(); </script>
+
+    <!-- Script link - end
+    ============================================================== -->
+
+    
+</body>
+</html>

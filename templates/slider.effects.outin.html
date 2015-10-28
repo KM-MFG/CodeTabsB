@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!-- Hide notice in IE -->
+<!-- saved from url=(0014)about:internet -->
+
+<!--[if IE 7]> <html class="ie ie7"> <![endif]-->
+<!--[if IE 8]> <html class="ie ie8"> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]> <html> <![endif]-->
+<head>
+
+    <!-- Page Infomations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="one of the best tabs plugins">
+    <meta name="author" content="codetabs - thystudio - Nguyen Van Thy">
+    
+    <!-- Title of page -->
+    <title>OUT-IN EFFECTS | CODETABS B+</title>
+
+    <!-- Favicon & apple-icon -->
+    <link rel="shortcut icon" href="../libs/imgs/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../libs/imgs/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../libs/imgs/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../libs/imgs/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../libs/imgs/icons/apple-touch-icon-144x144.png">
+
+    
+    <!-- CSS link -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../code/codetabs.css">
+    <link rel="stylesheet" href="../code/code.animate.css">
+    <link rel="stylesheet" href="../libs/css/bootstrap.code09.css">
+
+
+    <!-- CSS embed -->
+    <style>
+
+        /* Effect live
+        ---------------------------------------------------------- */
+        .fx {
+            position: relative;
+            margin-bottom: 30px;
+            border: 1px dashed transparent;
+            text-align: center
+        }
+        .fx-name {
+            padding: 30px 10px 0 10px;
+        }
+        .fx-live {
+            height: 80px;
+            background-color: #bcd;
+            color: #222;
+            cursor: pointer;
+
+            -webkit-animation-duration: 1s !important;
+                    animation-duration: 1s !important;
+        }
+        .fx-select {
+            position: absolute;
+            top: 0; right: 0;
+        }
+        .fx-select > span {
+            display: block;
+            float: left;
+            width: 20px; height: 12px;
+            padding: 5px 5px;
+            margin-left: 2px;
+
+            background-color: hsla(0,0%,100%,.1);
+            color: hsla(0,0%,0%,.3);
+            font-size: 11px;
+            line-height: 12px;
+            cursor: pointer;
+
+            -webkit-box-sizing: content-box;
+               -moz-box-sizing: content-box;
+                    box-sizing: content-box;
+        }
+
+        .fx.actived         { border-color: #ddd; }
+        .fx-in.actived      { background-color: #0cf; color: #fff; }
+        .fx-out.actived     { background-color: #fa0; color: #fff; }
+
+        
+
+        /* Effect Size
+        ---------------------------------------------------------- */
+        .fx-br              { float: left; width: 100%; height: 60px; }
+        .fx-issue           { padding-top: 50px; padding-bottom: 50px; }
+
+        .fx-issue0 .fx-live { background-color: #f0adf6; }
+        .fx-issue1 .fx-live { background-color: #bac5fe; }
+        .fx-issue2 .fx-live { background-color: #9dcdff; }
+        .fx-issue3 .fx-live { background-color: #8dd86c; }
+        .fx-issue4 .fx-live { background-color: #ffcc55; }
+        .fx-issue5 .fx-live { background-color: #eeaa99; }
+
+    </style>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]> <script src="../libs/scripts/html5shiv&respond.js"></script> <![endif]-->
+    
+</head>
+<body>
+
+
+    <!-- HEADER - begin
+    ============================================================== -->
+    <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+        <!-- Logo - begin
+        .......................................................... -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../templates">
+                <img src="../libs/imgs/logo_tabs.png" alt="[logo]">
+            </a>
+        </div>
+        <!-- Logo - end
+        .......................................................... -->
+
+
+
+        <!-- Menu - begin
+        .......................................................... -->
+        <div class="collapse navbar-collapse" id="nav-main">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tabs <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a class="text-success" href="page.templates.tabs.html">All templates</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.effects.one.html">One effect</a></li>
+                        <li><a href="tabs.effects.outin.html">Out/In effect</a></li>
+                        <li><a href="tabs.effects.powerline.html">Powerline effect</a></li>
+                        <li><a href="tabs.effects.fade.html">Fade classic effect</a></li>
+                        <li><a href="tabs.effects.random.html">Random effects</a></li>
+                        <li><a href="tabs.effects.others.html">Control animation</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.mobile.html">Mobile layout</a></li>
+                        <li><a href="tabs.vertical.html">Vertical layout</a></li>
+                        <li><a href="tabs.nested.html">Nested layout</a></li>
+                        <li><a href="tabs.bullet.html">Bullet layout</a></li> 
+                        <li><a href="tabs.fullwidth.html">Fullwidth layout</a></li>
+                        <li><a href="tabs.page.html">Page layout</a></li>
+                        <li><a href="tabs.fancybox.html">Tabs in fancybox</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.style.flat.html">Flat style</a></li>
+                        <li><a href="tabs.style.flatbox.html">Flatbox style</a></li>
+                        <li><a href="tabs.style.classic.html">Classic style</a></li>
+                        <li><a href="tabs.style.pill.html">Pill style</a></li>
+                        <li><a href="tabs.style.underline.html">Underline style</a></li>
+                        <li><a href="tabs.sizes.html">Tabs sizes</a></li>
+                        <li><a href="tabs.style.highlight.html">Highlight</a></li>
+                        <li><a href="tabs.style.fullcolor.html">Fullcolor</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.hor.topBegin.html">Horizontal top-begin</a></li>
+                        <li><a href="tabs.hor.topCenter.html">Horizontal top-center</a></li>
+                        <li><a href="tabs.hor.topEnd.html">Horizontal top-end</a></li>
+                        <li><a href="tabs.hor.topJustified.html">Horizontal top-justified</a></li>
+                        <li><a href="tabs.hor.bottomBegin.html">Horizontal bottom-begin</a></li>
+                        <li><a href="tabs.hor.bottomCenter.html">Horizontal bottom-center</a></li>
+                        <li><a href="tabs.hor.bottomEnd.html">Horizontal bottom-end</a></li>
+                        <li><a href="tabs.hor.bottomJustified.html">Horizontal bottom-justified</a></li>
+                        <li><a href="tabs.ver.topBegin.html">Vertical top-begin</a></li>
+                        <li><a href="tabs.ver.topCenter.html">Vertical top-center</a></li>
+                        <li><a href="tabs.ver.topEnd.html">Vertical top-end</a></li>
+                        <li><a href="tabs.ver.bottomBegin.html">Vertical bottom-begin</a></li>
+                        <li><a href="tabs.ver.bottomCenter.html">Vertical bottom-center</a></li>
+                        <li><a href="tabs.ver.bottomEnd.html">Vertical bottom-end</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.slideshow.timerArc.html">Arc timer</a></li>
+                        <li><a href="tabs.slideshow.timerBar.html">Bar timer</a></li>
+                        <li><a href="tabs.slideshow.timerNumber.html">Number timer</a></li>
+                        <li><a href="tabs.slideshow.timerOnly.html">Timer only</a></li>
+                        <li><a href="tabs.slideshow.random.html">Slideshow random</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="tabs.media.ajax.html">Load ajax content</a></li>
+                        <li><a href="tabs.api.swipeBody.html">Swipe body</a></li>
+                        <li><a href="tabs.api.addremove.html">Add/Remove tabs</a></li>
+                        <li><a href="tabs.api.addAjax.html">Add ajax tabs</a></li>
+                        <li><a href="tabs.api.callback.html">Callback events</a></li>
+                        <li><a href="tabs.api.showByDevice.html">Show by device</a></li>
+                        <li><a href="tabs.api.showFrom.html">Show from</a></li>
+                        <li><a href="tabs.api.deeplinking.html">Deep linking</a></li>
+                        <li><a href="tabs.api.deeplinkingMulti.html">Deep linking multi</a></li>
+                        <li><a href="tabs.api.deeplinkingID.html">Deep linking id</a></li>
+                        <li><a href="tabs.api.cookie.html">Cookie</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Slider <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a class="text-success" href="page.templates.slider.html">All templates</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.basic.html">Basic</a></li>
+                        <li><a href="slider.lazyload.html">Lazyload</a></li>
+                        <li><a href="slider.classic1.html">Classic-1</a></li>
+                        <li><a href="slider.classic2.html">Classic-2</a></li>
+                        <li><a href="slider.responsive.html">Responsive</a></li>
+                        <li><a href="slider.outbox.html">Outbox</a></li>
+                        <li><a href="slider.mobile.html">Mobile</a></li>
+                        <li><a href="slider.fullwidth.html">Fullwidth</a></li>
+                        <li><a href="slider.fullwidthMedia.html">Fullwidth-meida</a></li>
+                        <li><a href="slider.center.html">Center</a></li>
+                        <li><a href="slider.centerMedia.html">Center-media</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.vertical.html">Vertical</a></li>
+                        <li><a href="slider.verticalSwipe.html">Vertical swipe</a></li>
+                        <li><a href="slider.nested.html">Nested</a></li>
+                        <li><a href="slider.multi.html">Multi</a></li>
+                        <li><a href="slider.heightAuto.html">Height-auto</a></li>
+                        <li><a href="slider.heightFixed.html">Height-fixed</a></li>
+                        <li><a href="slider.caption.html">Caption</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="slider.effects.one.html">One effect</a></li>
+                        <li><a href="slider.effects.outin.html">Out/In effect</a></li>
+                        <li><a href="slider.effects.powerline.html">Powerline effect</a></li>
+                        <li><a href="slider.effects.fade.html">Fade classic effect</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.slideshow.timerArc.html">Arc timer</a></li>
+                        <li><a href="slider.slideshow.timerBar.html">Bar timer</a></li>
+                        <li><a href="slider.slideshow.timerNumber.html">Number timer</a></li>
+                        <li><a href="slider.slideshow.timerOnly.html">Timer only</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="page.howto.html">How to</a></li>
+                <li><a href="../documentation/documentation.html">Docs</a></li>
+                <li><a href="http://codecanyon.net/item/codetabs-b-premium-tabs-slider-for-bootstrap/8278901?ref=thystudio" target="_blank">Buy now!</a></li>
+            </ul>
+        </div>
+        <!-- Menu - end
+        .......................................................... -->
+
+    </div>
+    </nav>
+    <!-- HEADER - end
+    ============================================================== -->
+
+
+
+
+
+
+    <!-- HEADING - begin
+    ============================================================== -->
+    <div class="wrapper">
+    <div class="container">
+        
+        <div class="title-head">
+            <h1 class="">COMBINE THOUSAND EFFECTS WITH MORE 250+ OUT-IN EFFECTS</h1>
+            <p class="title-desc">tabs effects out-in</p>
+        </div>
+
+    </div>
+    </div>
+    <!-- HEADING - end
+    ============================================================== -->
+
+
+
+
+
+
+    <!-- HIGHTLIGHT SECTION - begin
+    ============================================================== -->
+    <div class="wrapper zone-pattern2 ma-b-100">
+    <div class="container">
+
+
+        <!-- SLIDER - begin -->
+        <div class="ct" data-tabs="
+            isAutoRun-on isKeyboard-on responsive-940
+            fxIn-roTwistDownIn fxOut-roSoftLeftOut speed-800
+            pag-{ type: bullet, align: center, pos: bottom } swipe-{ isBody: true }">
+
+            
+            <a class="ct-img" href="imgs/slider/img_demo_default0.png">[image0]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default1.png">[image1]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default2.png">[image2]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default3.png">[image3]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default4.png">[image4]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default5.png">[image5]</a>
+        </div>
+        <!-- SLIDER - end -->
+
+    </div>
+    </div>
+    <!-- HIGHTLIGHT SECTION - end
+    ============================================================== -->
+
+
+
+
+
+
+    <!-- EFFECT TABLES - begin
+    ============================================================== -->
+    <div class="container">
+        
+        <!-- Heading - begin -->
+        <div class="title-big">LIVE EFFECTS SAMPLE</div>
+        <!-- Heading - end -->
+    </div>
+
+
+    <!-- Template gallery - begin
+    .......................................................... -->
+    <div class="fx-table ma-b-100">
+
+        <!-- <div class="fx-issue">
+            <h3>EFFECTS ISSUE 1</h3>
+            <div class="fx-list row">
+
+                <div class="fx" data-fx="shake">
+                    <div class="fx-live">
+                        <div class="fx-name">shake</div>
+                    </div>
+
+                    <div class="fx-select">
+                        <span class="fx-in">in</span>
+                        <span class="fx-out">out</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div> -->
+
+    </div>
+    <!-- Template gallery - end
+    .......................................................... -->
+
+    <!-- EFFECT TABLES - end
+    ============================================================== -->
+
+    
+
+
+    
+    
+    <!-- Footer - begin
+    ============================================================== -->
+    <div class="wrapper footer">
+    <div class="container">
+        
+        <!-- Copyright -->
+        <section class="copyright">
+            <p>&copy; 2014 Thystudio. All Rights Reserved.</p>
+        </section>
+
+    </div>
+    </div>
+    <!-- Footer - end
+    ============================================================== -->
+
+    
+
+
+
+
+    <!-- Script - begin
+    ============================================================== -->
+    <script src="../libs/scripts/jquery-1.11.1.min.js"></script> <!-- jQuery Libary -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script> <!-- Bootstrap plugin -->
+    <script src="../code/codetabs.js"></script> <!-- Codetabs Plugins -->
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+
+            // Codeslider init
+            var code     = $('.ct').data('codetabs'),
+                actived  = 'actived',
+                speed    = 1000,
+                $effect  = $('#effects'),
+                $fxTable = $('.fx-table'),
+                $fxLast, $fxInLast, $fxOutLast;
+
+            var aFx = {
+
+                'title0' : 'Attentions',
+                'group0' : ['wave', 'juggle', 'flatten', 'bounce', 'flash', 'pulse', 'rubberBand', 'swing', 'tada', 'wobble', 'br',
+                            'flip', 'bobUp', 'bobDown', 'bobLeft', 'bobRight', 'ringLeft', 'ringRight', 'ringUp', 'ringDown', 'br',
+                            'shake', 'shakeSlow', 'shakeLittle', 'shakeHard', 'shakeHor', 'shakeVer', 'shakeRotate', 'shakeOpacity', 'shakeCrazy'],
+
+                'title1' : 'Basic - Specials',
+                'group1' : ['fadeOut', 'fadeIn', 'bounceOut', 'bounceIn',
+                            'roSlit', 'newspaperOut', 'newspaperIn', 'holeOut', 'br',
+                            'flipXOut', 'flipYOut', 'flipXIn', 'flipYIn',
+                            'lightSpeedOut', 'lightSpeedIn', 'br',
+                            'hinge', 'rollOut', 'rollIn',
+                            'magic', 'swap', 'twistUpIn', 'twistDownIn', 'br',
+                            'puffOut', 'pullIn', 'swashOut', 'swashIn', 'vanishOut', 'vanishIn', 'br',
+                            'foolishOut', 'foolishIn', 'bombLeftOut', 'bombRightOut'],
+
+                'title2' : 'Pull - Glue - Perspective',
+                'group2' : ['pullOut', 'pullIn', 'pushOut', 'pushIn',
+                            'pullBounceOut', 'pullBounceIn', 'pushBounceOut', 'pushBounceIn',
+                            'pullSoftOut', 'pullSoftIn', 'pushSoftOut', 'pushSoftIn', 'br',
+                            'glueLeftOut', 'glueRightOut', 'glueUpOut', 'glueDownOut',
+                            'glueLeftIn', 'glueRightIn', 'glueUpIn', 'glueDownIn', 'br',
+                            'perspectiveLeftOut', 'perspectiveRightOut', 'perspectiveUpOut', 'perspectiveDownOut',
+                            'perspectiveLeftIn', 'perspectiveRightIn', 'perspectiveUpIn', 'perspectiveDownIn'],
+
+                'title3' : 'Move - Fan - Scale',
+                'group3' : ['moveLeftBehind', 'moveRightBehind', 'moveLeftFront', 'moveRightFront',
+                            'moveShortLeftBehind', 'moveShortRightBehind', 'moveShortLeftFront', 'moveShortRightFront', 'br',
+                            'fanBehindUp', 'fanBehindDown', 'fanFrontUp', 'fanFrontDown', 'br',
+                            'soEdgeLeftOut', 'soEdgeRightOut', 'soEdgeUpOut', 'soEdgeDownOut',
+                            'soEdgeLeftIn', 'soEdgeRightIn', 'soEdgeUpIn', 'soEdgeDownIn'],
+
+                'title4' : 'Slide',
+                'group4' : ['slideLeftOut', 'slideRightOut', 'slideUpOut', 'slideDownOut',
+                            'slideLeftIn', 'slideRightIn', 'slideUpIn', 'slideDownIn', 'br',
+                            'slideOneLeftOut', 'slideOneRightOut', 'slideOneUpOut', 'slideOneDownOut',
+                            'slideOneLeftIn', 'slideOneRightIn', 'slideOneUpIn', 'slideOneDownIn', 'br',
+                            'slideShortLeftOut', 'slideShortRightOut', 'slideShortUpOut', 'slideShortDownOut',
+                            'slideShortLeftIn', 'slideShortRightIn', 'slideShortUpIn', 'slideShortDownIn', 'br',
+                            'slideFadeLeftOut', 'slideFadeRightOut', 'slideFadeUpOut', 'slideFadeDownOut',
+                            'slideFadeLeftIn', 'slideFadeRightIn', 'slideFadeUpIn', 'slideFadeDownIn', 'br',
+                            'slideBounceLeftOut', 'slideBounceRightOut', 'slideBounceUpOut', 'slideBounceDownOut',
+                            'slideBounceLeftIn', 'slideBounceRightIn', 'slideBounceUpIn', 'slideBounceDownIn', 'br',
+                            'slideTinLeftOut', 'slideTinRightOut', 'slideTinUpOut', 'slideTinDownOut',
+                            'slideTinLeftIn', 'slideTinRightIn', 'slideTinUpIn', 'slideTinDownIn', 'br',
+                            'slideShakeLeftOut', 'slideShakeRightOut', 'slideShakeUpOut', 'slideShakeDownOut',
+                            'slideShakeLeftIn', 'slideShakeRightIn', 'slideShakeUpIn', 'slideShakeDownIn', 'br',
+                            'slideScaleLeftOut', 'slideScaleRightOut', 'slideScaleUpOut', 'slideScaleDownOut',
+                            'slideScaleLeftIn', 'slideScaleRightIn', 'slideScaleUpIn', 'slideScaleDownIn', 'br',
+                            'slidePullLeftOut', 'slidePullRightOut', 'slidePullUpOut', 'slidePullDownOut',
+                            'slidePullLeftIn', 'slidePullRightIn', 'slidePullUpIn', 'slidePullDownIn'],
+
+                'title5' : 'Rotate',
+                'group5' : ['roLeftOut', 'roRightOut', 'roUpOut', 'roDownOut',
+                            'roLeftIn', 'roRightIn', 'roUpIn', 'roDownIn', 'br',
+                            'roDownLeftOut', 'roDownRightOut', 'roUpLeftOut', 'roUpRightOut',
+                            'roDownLeftIn', 'roDownRightIn', 'roUpLeftIn', 'roUpRightIn', 'br',
+                            'roSoftLeftOut', 'roSoftRightOut', 'roSoftLeftIn', 'roSoftRightIn', 'br',
+                            'roTwistLeftOut', 'roTwistRightOut', 'roTwistUpOut', 'roTwistDownOut',
+                            'roTwistLeftIn', 'roTwistRightIn', 'roTwistUpIn', 'roTwistDownIn', 'br',
+                            'roWheelLeftOut', 'roWheelRightOut', 'roWheelUpOut', 'roWheelDownOut',
+                            'roWheelLeftIn', 'roWheelRightIn', 'roWheelUpIn', 'roWheelDownIn', 'br',
+                            'roFlitLeftOut', 'roFlitRightOut', 'roFlitUpOut', 'roFlitDownOut',
+                            'roFlitLeftIn', 'roFlitRightIn', 'roFlitUpIn', 'roFlitDownIn', 'br',
+                            'roFoldLeftOut', 'roFoldRightOut', 'roFoldUpOut', 'roFoldDownOut',
+                            'roFoldLeftIn', 'roFoldRightIn', 'roFoldUpIn', 'roFoldDownIn', 'br',
+                            'roRoomLeftOut', 'roRoomRightOut', 'roRoomUpOut', 'roRoomDownOut',
+                            'roRoomLeftIn', 'roRoomRightIn', 'roRoomUpIn', 'roRoomDownIn', 'br',
+                            'roEdgeLeftOut', 'roEdgeRightOut', 'roEdgeUpOut', 'roEdgeDownOut',
+                            'roEdgeLeftIn', 'roEdgeRightIn', 'roEdgeUpIn', 'roEdgeDownIn',
+                            'roEdgeSoftLeftOut', 'roEdgeSoftRightOut', 'roEdgeSoftUpOut', 'roEdgeSoftDownOut', 'br',
+                            'roShortPushLeftOut', 'roShortPushRightOut', 'roShortPushLeftIn', 'roShortPushRightIn',
+                            'roShortPullLeftOut', 'roShortPullRightOut', 'roShortPullLeftIn', 'roShortPullRightIn']
+            },
+            numFx = 6;
+
+
+
+
+            /* Render markup
+            ************************************************************** */
+            var renderNewLine = function() {
+                    return '<div class="fx-br"></div>';
+                },
+
+                renderFxChild = function(fxCur) {
+
+                    return     '<div class="col-sm-3 col-xs-6">'
+                            +  '<div class="fx" data-fx="'+ fxCur +'">'
+                            +  '    <div class="fx-live">'
+                            +  '        <div class="fx-name">'+ fxCur +'</div>'
+                            +  '    </div>'
+                            
+                            +  '    <div class="fx-select">'
+                            +  '        <span class="fx-in">in</span>'
+                            +  '        <span class="fx-out">out</span>'
+                            +  '    </div>'
+                            +  '</div>'
+                            +  '</div>';
+                },
+
+                renderFxIssue = function(title, strGroup, id) {
+
+                    return     '<div class="fx-issue fx-issue'+ id +'">'
+                            +  '<div class="container">'
+                            +  '    <h3>'+ title +'</h3>'
+                            +  '    <div class="fx-list row">'+ strGroup +'</div>'
+                            +  '</div>'
+                            +  '</div>';
+                };
+
+            var strFxIssue = '', nCountFx = 0;
+            for(var i = 0, lenI = numFx-1; i <= lenI; i++) {
+
+                var strFxGroup = ''
+                    fxGroup    = aFx['group'+ i],
+                    fxTitle    = aFx['title'+ i];
+
+                for(var j = 0, lenJ = fxGroup.length-1; j <= lenJ; j++) {
+                    var fxCur = fxGroup[j];
+
+                    // check new line
+                    if( fxCur == 'br' ) { strFxGroup += renderNewLine(); }
+                    else                { strFxGroup += renderFxChild(fxCur); nCountFx++; }
+                }
+
+                // Render fx issue
+                strFxIssue += renderFxIssue(fxTitle, strFxGroup, i);
+            }
+            $fxTable.html(strFxIssue);
+
+
+
+            /* Effects live show
+            ************************************************************** */
+            var $fx = $('.fx');
+            $fx.each(function() {
+
+                var $el     = $(this),
+                    $fxName = $el.find('.fx-name'),
+                    $fxLive = $el.find('.fx-live'),
+                    $fxIn   = $el.find('.fx-in'),
+                    $fxOut  = $el.find('.fx-out'),
+                    fxName  = $el.data('fx'),
+                    fxAnim  = 'code-animated';
+
+
+                /* FX LIVE EVENTS CLICK */
+                var tiLive,
+                    delay    = 1000,
+                    fxRemove = function() {
+                        $el.removeClass(actived);
+                        $fxLive.removeClass(fxName +' '+ fxAnim);
+                    };
+
+                $el.on('click', function(e) {
+                    if( $el.hasClass(actived) ) {
+                        clearTimeout(tiLive);
+                        fxRemove();
+                    }
+
+                    else {
+
+                        // Loai bo hieu ung tren effect cu
+                        !!$fxLast && $fxLast.removeClass(actived);
+
+                        // Add class effect tren fxLive
+                        $el.addClass(actived);
+                        $fxLive.addClass(fxName +' '+ fxAnim);
+
+                        // Assign to varible fxlast
+                        $fxLast = $el;
+
+                        // Setup timer de remove hieu ung sau 1000ms
+                        clearTimeout(tiLive);
+                        tiLive = setTimeout(fxRemove, 1000);
+                    }
+
+                    return false;
+                });
+
+
+                /* FX SELECT EVENTS CLICK */
+                var inOutFx = function(isFxIn) {
+
+                    var $el     = isFxIn ? $fxIn     : $fxOut,
+                        $elLast = isFxIn ? $fxInLast : $fxOutLast,
+                        opts    = {};
+
+                    if( $el.hasClass(actived) ) {
+                        $el.removeClass(actived);
+                    }
+                    else {
+
+                        // Loai bo select tren doi tuong cu
+                        !!$elLast && $elLast.removeClass(actived);
+
+                        // Add class vao doi tuong hien tai
+                        $el.addClass(actived);
+
+                        // Update hieu ung len tabs
+                        opts[isFxIn ? 'fxIn' : 'fxOut'] = fxName;
+                        code.prop(opts);
+
+                        // Luu tru doi tuong effect hien tai
+                        // Khong the su dung $elLast duoc
+                        if( isFxIn ) $fxInLast = $el;
+                        else         $fxOutLast = $el;
+                    }
+                };
+                $fxIn.on( 'click', function(e) { inOutFx(1); return false; });
+                $fxOut.on('click', function(e) { inOutFx(0); return false; });
+            });
+        });
+    </script>
+    <!-- Script - end
+    ============================================================== -->
+
+</body>
+</html>

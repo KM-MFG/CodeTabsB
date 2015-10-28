@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!-- Hide notice in IE -->
+<!-- saved from url=(0014)about:internet -->
+
+<!--[if IE 7]> <html class="ie ie7"> <![endif]-->
+<!--[if IE 8]> <html class="ie ie8"> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]> <html> <![endif]-->
+<head>
+
+    <!-- Page Infomations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="one of the best tabs plugins">
+    <meta name="author" content="codetabs - thystudio - Nguyen Van Thy">
+    
+    <!-- Title of page -->
+    <title>CENTER LAYOUT | CODETABS B+</title>
+
+    <!-- Favicon & apple-icon -->
+    <link rel="shortcut icon" href="../libs/imgs/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../libs/imgs/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../libs/imgs/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../libs/imgs/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../libs/imgs/icons/apple-touch-icon-144x144.png">
+
+    
+    <!-- CSS link -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../code/codetabs.css">
+    <link rel="stylesheet" href="../code/code.animate.css">
+    <link rel="stylesheet" href="../libs/css/bootstrap.code09.css">
+
+
+    <!-- CSS Embbed -->
+    <style>
+
+        /* Ruler */
+        #ruler {
+            position: fixed;
+            left: 0; top: 0;
+            width: 100%; height: 0;
+            z-index: 99;
+            -webkit-transform: translateZ(0);
+                    transform: translateZ(0);
+        }
+        #ruler .container { position: relative; height: 0; }
+        #ruler-line {
+            width: 0; height: 10000px;
+            border-left: 1px dashed #ccc;
+            border-left-color: hsla(0,0%,0%,.2);
+        }
+        #ruler-note {
+            position: absolute;
+            left: 20px; top: 350px;
+            padding: 10px;
+            color: #999;
+            font-size: .85em;
+            background-color: #fff;
+            box-shadow: 2px 2px 0 hsla(0,0%,0%,.2);
+        }
+        #ruler-note:after {
+            position: absolute;
+            display: block;
+            content: '';
+            width: 0; height: 0;
+            left: -12px; top: 50%;
+            margin-top: -6px;
+            border: 6px solid transparent;
+            border-right-color: #fff;
+        }
+        @media only screen and (max-width: 767px) {
+            #ruler-note { display: none; }
+        }
+    </style>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]> <script src="../libs/scripts/html5shiv&respond.js"></script> <![endif]-->
+    
+</head>
+<body>
+
+
+    <!-- HEADER - begin
+    ============================================================== -->
+    <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+        <!-- Logo - begin
+        .......................................................... -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../templates">
+                <img src="../libs/imgs/logo_tabs.png" alt="[logo]">
+            </a>
+        </div>
+        <!-- Logo - end
+        .......................................................... -->
+
+
+
+        <!-- Menu - begin
+        .......................................................... -->
+        <div class="collapse navbar-collapse" id="nav-main">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tabs <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a class="text-success" href="page.templates.tabs.html">All templates</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.effects.one.html">One effect</a></li>
+                        <li><a href="tabs.effects.outin.html">Out/In effect</a></li>
+                        <li><a href="tabs.effects.powerline.html">Powerline effect</a></li>
+                        <li><a href="tabs.effects.fade.html">Fade classic effect</a></li>
+                        <li><a href="tabs.effects.random.html">Random effects</a></li>
+                        <li><a href="tabs.effects.others.html">Control animation</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.mobile.html">Mobile layout</a></li>
+                        <li><a href="tabs.vertical.html">Vertical layout</a></li>
+                        <li><a href="tabs.nested.html">Nested layout</a></li>
+                        <li><a href="tabs.bullet.html">Bullet layout</a></li> 
+                        <li><a href="tabs.fullwidth.html">Fullwidth layout</a></li>
+                        <li><a href="tabs.page.html">Page layout</a></li>
+                        <li><a href="tabs.fancybox.html">Tabs in fancybox</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.style.flat.html">Flat style</a></li>
+                        <li><a href="tabs.style.flatbox.html">Flatbox style</a></li>
+                        <li><a href="tabs.style.classic.html">Classic style</a></li>
+                        <li><a href="tabs.style.pill.html">Pill style</a></li>
+                        <li><a href="tabs.style.underline.html">Underline style</a></li>
+                        <li><a href="tabs.sizes.html">Tabs sizes</a></li>
+                        <li><a href="tabs.style.highlight.html">Highlight</a></li>
+                        <li><a href="tabs.style.fullcolor.html">Fullcolor</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.hor.topBegin.html">Horizontal top-begin</a></li>
+                        <li><a href="tabs.hor.topCenter.html">Horizontal top-center</a></li>
+                        <li><a href="tabs.hor.topEnd.html">Horizontal top-end</a></li>
+                        <li><a href="tabs.hor.topJustified.html">Horizontal top-justified</a></li>
+                        <li><a href="tabs.hor.bottomBegin.html">Horizontal bottom-begin</a></li>
+                        <li><a href="tabs.hor.bottomCenter.html">Horizontal bottom-center</a></li>
+                        <li><a href="tabs.hor.bottomEnd.html">Horizontal bottom-end</a></li>
+                        <li><a href="tabs.hor.bottomJustified.html">Horizontal bottom-justified</a></li>
+                        <li><a href="tabs.ver.topBegin.html">Vertical top-begin</a></li>
+                        <li><a href="tabs.ver.topCenter.html">Vertical top-center</a></li>
+                        <li><a href="tabs.ver.topEnd.html">Vertical top-end</a></li>
+                        <li><a href="tabs.ver.bottomBegin.html">Vertical bottom-begin</a></li>
+                        <li><a href="tabs.ver.bottomCenter.html">Vertical bottom-center</a></li>
+                        <li><a href="tabs.ver.bottomEnd.html">Vertical bottom-end</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.slideshow.timerArc.html">Arc timer</a></li>
+                        <li><a href="tabs.slideshow.timerBar.html">Bar timer</a></li>
+                        <li><a href="tabs.slideshow.timerNumber.html">Number timer</a></li>
+                        <li><a href="tabs.slideshow.timerOnly.html">Timer only</a></li>
+                        <li><a href="tabs.slideshow.random.html">Slideshow random</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="tabs.media.ajax.html">Load ajax content</a></li>
+                        <li><a href="tabs.api.swipeBody.html">Swipe body</a></li>
+                        <li><a href="tabs.api.addremove.html">Add/Remove tabs</a></li>
+                        <li><a href="tabs.api.addAjax.html">Add ajax tabs</a></li>
+                        <li><a href="tabs.api.callback.html">Callback events</a></li>
+                        <li><a href="tabs.api.showByDevice.html">Show by device</a></li>
+                        <li><a href="tabs.api.showFrom.html">Show from</a></li>
+                        <li><a href="tabs.api.deeplinking.html">Deep linking</a></li>
+                        <li><a href="tabs.api.deeplinkingMulti.html">Deep linking multi</a></li>
+                        <li><a href="tabs.api.deeplinkingID.html">Deep linking id</a></li>
+                        <li><a href="tabs.api.cookie.html">Cookie</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Slider <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a class="text-success" href="page.templates.slider.html">All templates</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.basic.html">Basic</a></li>
+                        <li><a href="slider.lazyload.html">Lazyload</a></li>
+                        <li><a href="slider.classic1.html">Classic-1</a></li>
+                        <li><a href="slider.classic2.html">Classic-2</a></li>
+                        <li><a href="slider.responsive.html">Responsive</a></li>
+                        <li><a href="slider.outbox.html">Outbox</a></li>
+                        <li><a href="slider.mobile.html">Mobile</a></li>
+                        <li><a href="slider.fullwidth.html">Fullwidth</a></li>
+                        <li><a href="slider.fullwidthMedia.html">Fullwidth-meida</a></li>
+                        <li><a href="slider.center.html">Center</a></li>
+                        <li><a href="slider.centerMedia.html">Center-media</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.vertical.html">Vertical</a></li>
+                        <li><a href="slider.verticalSwipe.html">Vertical swipe</a></li>
+                        <li><a href="slider.nested.html">Nested</a></li>
+                        <li><a href="slider.multi.html">Multi</a></li>
+                        <li><a href="slider.heightAuto.html">Height-auto</a></li>
+                        <li><a href="slider.heightFixed.html">Height-fixed</a></li>
+                        <li><a href="slider.caption.html">Caption</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="slider.effects.one.html">One effect</a></li>
+                        <li><a href="slider.effects.outin.html">Out/In effect</a></li>
+                        <li><a href="slider.effects.powerline.html">Powerline effect</a></li>
+                        <li><a href="slider.effects.fade.html">Fade classic effect</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.slideshow.timerArc.html">Arc timer</a></li>
+                        <li><a href="slider.slideshow.timerBar.html">Bar timer</a></li>
+                        <li><a href="slider.slideshow.timerNumber.html">Number timer</a></li>
+                        <li><a href="slider.slideshow.timerOnly.html">Timer only</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="page.howto.html">How to</a></li>
+                <li><a href="../documentation/documentation.html">Docs</a></li>
+                <li><a href="http://codecanyon.net/item/codetabs-b-premium-tabs-slider-for-bootstrap/8278901?ref=thystudio" target="_blank">Buy now!</a></li>
+            </ul>
+        </div>
+        <!-- Menu - end
+        .......................................................... -->
+
+    </div>
+    </nav>
+    <!-- HEADER - end
+    ============================================================== -->
+
+
+
+
+
+
+    <!-- HEADING - begin
+    ============================================================== -->
+    <div class="wrapper">
+    <div class="container">
+
+        <div class="title-head">
+            <h1 class="">POWERFUL MEDIA FEATURES CONTROL CENTER SLIDER EASIER</h1>
+            <p class="title-desc">slider center</p>
+        </div>
+
+    </div>
+    </div>
+    <!-- HEADING - end
+    ============================================================== -->
+
+
+
+
+
+    <!-- SLIDER - begin
+    ============================================================== -->
+    <div class="">
+
+        <!-- Slider center - begin -->
+        <div class="ct" data-tabs="
+            isAutoRun-on
+            fx-line speed-800
+            wSlide-0.7 wSlide-720-768-991 wSlide-940-992-1920
+            pag-{ type: bullet, align: center, pos: bottom } swipe-{ isBody: true }">
+        
+        
+            <a class="ct-img" href="imgs/slider/img_demo_default0.png">[image0]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default1.png">[image1]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default2.png">[image2]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default3.png">[image3]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default4.png">[image4]</a>
+            <a class="ct-img" href="imgs/slider/img_demo_default5.png">[image5]</a>
+        </div>
+        <!-- Slider center - end -->
+
+    </div>
+    <!-- SLIDER - end
+    ============================================================== -->
+
+
+
+
+
+    <!-- RULER - begin
+    ============================================================== -->
+    <div id="ruler">
+    <div class="container">
+        <div id="ruler-line"></div>
+        <div id="ruler-note">Image always align when resize</div>
+    </div>
+    </div>
+    <!-- RULER - end
+    ============================================================== -->
+
+    
+
+
+    
+    <!-- Dummnytext - begin
+    ============================================================== -->
+    <div class="wrapper ma-b-50">
+    <div class="container">
+    <div class="row">
+
+        <div class="col-sm-4">
+            <p class="bo-l-h"><i>Consectetur adipisicing elit. Vel, sequi, quis, minima, dolor quisquam numquam quod in repudiandae officia nostrum porro ea voluptas eos sunt culpa odit enim. Assumenda, dolores.</i></p>
+        </div>
+
+        <div class="col-sm-8">
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus reprehenderit, beatae quia vero autem modi magni, debitis nam, omnis deserunt id a ullam excepturi dolores. Neque est, asperiores tempora odit.</p>
+            <p>Veritatis ipsa itaque quis laboriosam, sequi tempora tempore natus, odit, consequatur laudantium distinctio tenetur, fugit architecto obcaecati ipsum. Molestias ullam rem incidunt, adipisci illo eligendi. Iure accusantium est, ipsum sunt.</p>
+            <p>Voluptatibus eos molestias illo, quae architecto laboriosam atque culpa quia quasi mollitia! Voluptate esse alias unde nam temporibus amet, adipisci, corporis aliquam delectus cum voluptates fugiat facilis illo quas optio.</p>
+            <p>Ex accusamus et aut suscipit consequuntur, nihil odit delectus soluta laborum itaque dolore reprehenderit veritatis voluptate quaerat quos facilis a similique cum veniam id hic enim repellendus. Culpa, nobis, omnis!</p>
+            <p>Nihil suscipit, mollitia! Quo molestiae eos voluptas sed! Porro, eum. A aperiam provident beatae soluta eaque vero impedit amet est maxime fuga quo maiores, molestias fugit libero, dolore deleniti, voluptas.</p>
+
+        </div>
+    
+    </div>
+    </div>    
+    </div>
+    <!-- Dummytext - end
+    ============================================================== -->
+
+
+
+
+    
+    
+    <!-- Footer - begin
+    ============================================================== -->
+    <div class="wrapper footer">
+    <div class="container">
+        
+        <!-- Copyright -->
+        <section class="copyright">
+            <p>&copy; 2014 Thystudio. All Rights Reserved.</p>
+        </section>
+
+    </div>
+    </div>
+    <!-- Footer - end
+    ============================================================== -->
+
+
+
+
+
+
+    <!-- Script - begin
+    ============================================================== -->
+    <script src="../libs/scripts/jquery-1.11.1.min.js"></script> <!-- jQuery Libary -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script> <!-- Bootstrap plugin -->
+    <script src="../code/codetabs.js"></script> <!-- Codetabs Plugins -->
+    
+
+    <script type="text/javascript">
+    </script>
+    <!-- SCRIPT - end
+    ============================================================== -->
+
+</body>
+</html>

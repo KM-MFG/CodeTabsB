@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<!-- Hide notice in IE -->
+<!-- saved from url=(0014)about:internet -->
+
+<!--[if IE 7]> <html class="ie ie7"> <![endif]-->
+<!--[if IE 8]> <html class="ie ie8"> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]> <html> <![endif]-->
+<head>
+
+    <!-- Page Infomations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="one of the best tabs plugins">
+    <meta name="author" content="codetabs - thystudio - Nguyen Van Thy">
+    
+    <!-- Title of page -->
+    <title>MOBILE TABS | CODETABS B+</title>
+
+    <!-- Favicon & apple-icon -->
+    <link rel="shortcut icon" href="../libs/imgs/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../libs/imgs/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../libs/imgs/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../libs/imgs/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../libs/imgs/icons/apple-touch-icon-144x144.png">
+
+    
+    <!-- CSS link -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../code/codetabs.css">
+    <link rel="stylesheet" href="../code/code.animate.css">
+    <link rel="stylesheet" href="../libs/css/bootstrap.code09.css">
+
+
+    <!-- CSS embed -->
+    <style>
+
+        /* Theme */
+        .dummy-group > .dummy-img { width: 21.9%; }
+        .zone-pattern {
+            background: #f2f2f2 url(../libs/imgs/pattern_wavegrid.png) repeat;
+            border: solid #e9e9e9;
+            border-width: 1px 0;
+        }
+        .pa-30                  { padding-top: 30px; padding-bottom: 30px; }
+        .zone-top               { margin-top: 100px; }
+        .zone-bottom            { margin-bottom: 50px; }
+
+
+
+        /* DEVICE
+            + Iphone
+            + Tab
+            + Responsive
+        ---------------------------------------------------------- */
+        .device { position: relative; }
+        .iphone {
+            float: right;
+            width: 380px; height: 604px;
+            margin-top: -138px;
+        }
+        .ct {
+            width: 320px;
+            position: absolute;
+            top: 0; right: 42px;
+        }
+
+        @media only screen and (min-width: 1px) and (max-width: 767px) {
+            .iphone             { display: none; }
+            .zone-top           { margin-top: 20px; }
+            .zone-bottom        { margin-bottom: 50px; }
+            .ct {
+                position: static;
+                width: auto;
+                right: 0;
+                margin-top: 50px; margin-bottom: 50px;
+            }
+        }
+
+        
+
+        /* SHOW 3D
+        ---------------------------------------------------------- */
+        @media only screen and (min-width: 767px) {
+
+            /* zone-show */
+            .zone-show, .zone-show .ct, .zone-show .sec-info, .zone-show .iphone {
+                -webkit-transition: -webkit-transform .8s, opacity .8s, background .8s;
+                        transition:         transform .8s, opacity .8s, background .8s;
+            }
+            .zone-show .ct {
+                -webkit-transform-origin: 50% 0;
+                        transform-origin: 50% 0;
+            }
+            .zone-show .ct-tab          { background-color: hsla(0,0%,100%,.5); }
+            
+            /* zone-3d */
+            .zone-3d                    { background-color: #ddd; background-image: none; border: none; }
+            .zone-3d .ct-viewport       { border-color: #ccc !important; }
+            .zone-3d .ct {
+                box-shadow: 1px 1px 1px hsla(0,0%,0%,.15);
+                -webkit-transform: perspective(1200px) translateX(-200px) translateZ(100px) rotateY(-30deg) rotateX(15deg);
+                        transform: perspective(1200px) translateX(-200px) translateZ(100px) rotateY(-30deg) rotateX(15deg);
+            }
+            .zone-3d .sec-info, .zone-3d .iphone {
+                opacity: .1;
+                -webkit-transform: perspective(1200px) translateZ(-400px);
+                transform: perspective(1200px) translateZ(-400px);
+            }
+            
+            
+            /* Toggle3d button */
+            .toggle3d {
+                display: none;
+                position: absolute;
+                right: 168px; bottom: -97px;
+                width: 67px; height: 67px;
+
+                background-color: #333;
+                opacity: .08;
+                border-radius: 50%;
+                text-indent: -9999px;
+                cursor: pointer;
+            }
+            .toggle3d:after {
+                content: '';
+                position: absolute;
+                left: 50%; top: 50%;
+                margin-left: -10px; margin-top: -11px;
+                width: 20px; height: 20px;
+                
+                border: 1px solid #999;
+                border-radius: 7px;
+            }
+            .csstransition .toggle3d    { display: block; }
+            .toggle3d:hover             { opacity: .15; }
+            .toggle3d.actived           { opacity: .25; }
+            .toggle3d.actived:after     { display: block; }
+        }
+
+
+
+        /* Note */
+        .note-3dview             { position: relative; }
+        .note-3dview > img       { position: absolute; top: 470px; right: 70px; }
+
+        @media only screen and (min-width: 1px) and (max-width: 767px) {
+            .note-3dview { display: none; }
+        }
+    </style>
+    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]> <script src="../libs/scripts/html5shiv&respond.js"></script> <![endif]-->
+    
+</head>
+<body>
+
+
+    <!-- HEADER - begin
+    ============================================================== -->
+    <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+        <!-- Logo - begin
+        .......................................................... -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../templates">
+                <img src="../libs/imgs/logo_tabs.png" alt="[logo]">
+            </a>
+        </div>
+        <!-- Logo - end
+        .......................................................... -->
+
+
+
+        <!-- Menu - begin
+        .......................................................... -->
+        <div class="collapse navbar-collapse" id="nav-main">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tabs <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a class="text-success" href="page.templates.tabs.html">All templates</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.effects.one.html">One effect</a></li>
+                        <li><a href="tabs.effects.outin.html">Out/In effect</a></li>
+                        <li><a href="tabs.effects.powerline.html">Powerline effect</a></li>
+                        <li><a href="tabs.effects.fade.html">Fade classic effect</a></li>
+                        <li><a href="tabs.effects.random.html">Random effects</a></li>
+                        <li><a href="tabs.effects.others.html">Control animation</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.mobile.html">Mobile layout</a></li>
+                        <li><a href="tabs.vertical.html">Vertical layout</a></li>
+                        <li><a href="tabs.nested.html">Nested layout</a></li>
+                        <li><a href="tabs.bullet.html">Bullet layout</a></li> 
+                        <li><a href="tabs.fullwidth.html">Fullwidth layout</a></li>
+                        <li><a href="tabs.page.html">Page layout</a></li>
+                        <li><a href="tabs.fancybox.html">Tabs in fancybox</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.style.flat.html">Flat style</a></li>
+                        <li><a href="tabs.style.flatbox.html">Flatbox style</a></li>
+                        <li><a href="tabs.style.classic.html">Classic style</a></li>
+                        <li><a href="tabs.style.pill.html">Pill style</a></li>
+                        <li><a href="tabs.style.underline.html">Underline style</a></li>
+                        <li><a href="tabs.sizes.html">Tabs sizes</a></li>
+                        <li><a href="tabs.style.highlight.html">Highlight</a></li>
+                        <li><a href="tabs.style.fullcolor.html">Fullcolor</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.hor.topBegin.html">Horizontal top-begin</a></li>
+                        <li><a href="tabs.hor.topCenter.html">Horizontal top-center</a></li>
+                        <li><a href="tabs.hor.topEnd.html">Horizontal top-end</a></li>
+                        <li><a href="tabs.hor.topJustified.html">Horizontal top-justified</a></li>
+                        <li><a href="tabs.hor.bottomBegin.html">Horizontal bottom-begin</a></li>
+                        <li><a href="tabs.hor.bottomCenter.html">Horizontal bottom-center</a></li>
+                        <li><a href="tabs.hor.bottomEnd.html">Horizontal bottom-end</a></li>
+                        <li><a href="tabs.hor.bottomJustified.html">Horizontal bottom-justified</a></li>
+                        <li><a href="tabs.ver.topBegin.html">Vertical top-begin</a></li>
+                        <li><a href="tabs.ver.topCenter.html">Vertical top-center</a></li>
+                        <li><a href="tabs.ver.topEnd.html">Vertical top-end</a></li>
+                        <li><a href="tabs.ver.bottomBegin.html">Vertical bottom-begin</a></li>
+                        <li><a href="tabs.ver.bottomCenter.html">Vertical bottom-center</a></li>
+                        <li><a href="tabs.ver.bottomEnd.html">Vertical bottom-end</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="tabs.slideshow.timerArc.html">Arc timer</a></li>
+                        <li><a href="tabs.slideshow.timerBar.html">Bar timer</a></li>
+                        <li><a href="tabs.slideshow.timerNumber.html">Number timer</a></li>
+                        <li><a href="tabs.slideshow.timerOnly.html">Timer only</a></li>
+                        <li><a href="tabs.slideshow.random.html">Slideshow random</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="tabs.media.ajax.html">Load ajax content</a></li>
+                        <li><a href="tabs.api.swipeBody.html">Swipe body</a></li>
+                        <li><a href="tabs.api.addremove.html">Add/Remove tabs</a></li>
+                        <li><a href="tabs.api.addAjax.html">Add ajax tabs</a></li>
+                        <li><a href="tabs.api.callback.html">Callback events</a></li>
+                        <li><a href="tabs.api.showByDevice.html">Show by device</a></li>
+                        <li><a href="tabs.api.showFrom.html">Show from</a></li>
+                        <li><a href="tabs.api.deeplinking.html">Deep linking</a></li>
+                        <li><a href="tabs.api.deeplinkingMulti.html">Deep linking multi</a></li>
+                        <li><a href="tabs.api.deeplinkingID.html">Deep linking id</a></li>
+                        <li><a href="tabs.api.cookie.html">Cookie</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Slider <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a class="text-success" href="page.templates.slider.html">All templates</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.basic.html">Basic</a></li>
+                        <li><a href="slider.lazyload.html">Lazyload</a></li>
+                        <li><a href="slider.classic1.html">Classic-1</a></li>
+                        <li><a href="slider.classic2.html">Classic-2</a></li>
+                        <li><a href="slider.responsive.html">Responsive</a></li>
+                        <li><a href="slider.outbox.html">Outbox</a></li>
+                        <li><a href="slider.mobile.html">Mobile</a></li>
+                        <li><a href="slider.fullwidth.html">Fullwidth</a></li>
+                        <li><a href="slider.fullwidthMedia.html">Fullwidth-meida</a></li>
+                        <li><a href="slider.center.html">Center</a></li>
+                        <li><a href="slider.centerMedia.html">Center-media</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.vertical.html">Vertical</a></li>
+                        <li><a href="slider.verticalSwipe.html">Vertical swipe</a></li>
+                        <li><a href="slider.nested.html">Nested</a></li>
+                        <li><a href="slider.multi.html">Multi</a></li>
+                        <li><a href="slider.heightAuto.html">Height-auto</a></li>
+                        <li><a href="slider.heightFixed.html">Height-fixed</a></li>
+                        <li><a href="slider.caption.html">Caption</a></li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="slider.effects.one.html">One effect</a></li>
+                        <li><a href="slider.effects.outin.html">Out/In effect</a></li>
+                        <li><a href="slider.effects.powerline.html">Powerline effect</a></li>
+                        <li><a href="slider.effects.fade.html">Fade classic effect</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="slider.slideshow.timerArc.html">Arc timer</a></li>
+                        <li><a href="slider.slideshow.timerBar.html">Bar timer</a></li>
+                        <li><a href="slider.slideshow.timerNumber.html">Number timer</a></li>
+                        <li><a href="slider.slideshow.timerOnly.html">Timer only</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="page.howto.html">How to</a></li>
+                <li><a href="../documentation/documentation.html">Docs</a></li>
+                <li><a href="http://codecanyon.net/item/codetabs-b-premium-tabs-slider-for-bootstrap/8278901?ref=thystudio" target="_blank">Buy now!</a></li>
+            </ul>
+        </div>
+        <!-- Menu - end
+        .......................................................... -->
+
+    </div>
+    </nav>
+    <!-- HEADER - end
+    ============================================================== -->
+
+
+
+
+
+
+
+    <!-- HIGHTLIGHT SECTION - begin
+    ============================================================== -->
+    <div class="pa-t-50 zone-top zone-bottom zone-pattern zone-show">
+    <div class="container">
+    <div class="row">
+        
+        <!-- TEXT CONTENT - begin -->
+        <div class="col-sm-6 sec-info">
+            <h1 class="color-hg">FULLY RESPONSIVE</h1>
+            <h4 class="no-ma">Friendly swipe gestures</h4>
+            <p>Easily switch the slides with the support <b>swipe gestures</b> on title-tabs or body-tabs.</p>
+
+            <h4 class="no-ma">No dropdown menu on mobile</h4>
+            <p>Codetabs displayed on the mobile devices trully is tabs, no need to worry about the number of slides on tabs.</p>
+        </div>
+        <!-- TEXT CONTENT - end -->
+
+
+
+        
+        <div class="col-sm-6 device">
+
+            <!-- Iphone device -->
+            <div class="iphone">
+                <img src="../libs/imgs/iphone_stroke.png" alt="iphone">
+            </div>
+            
+            <!-- Toggle view 3d -->
+            <div class="toggle3d">toggle view 3D</div>
+
+            <!-- TEXT NOTE -->
+            <div class="note-3dview">
+                <img src="../libs/imgs/note_3dview.png" alt="3dview">
+            </div>
+
+            
+
+            <!-- TAB FLAT HORIZONTAL - begin -->
+            <div class="ct ct-flatbox" data-tabs="
+                isAutoRun-on
+                fxOne-stickHor speed-800
+                swipe-{ isBody: 1 } pag-{ align: center } ">
+
+                <div>
+                    <div class="ct-pagitem">SWIPE GESTURES
+                        <br><small>super easy switch slide</small>
+                    </div>
+
+                    <div>
+                        <h2>FIRST. It is powerfull tab</h2>
+
+                        <p class="bo-l-h"><i>Temporibus quaerat nulla sunt.Natus, dolore, aspernatur.</i></p>
+                        <p class="dropcap">Upsum dolor sit amet, consectetur adipisicing elit. Nulla, sapiente soluta itaque eum repellat tempora totam unde doloremque nobis. Provident, nisi, libero numquam soluta neque modi nulla ut necessitatibus ullam.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="ct-pagitem">HUGE EFFECTS
+                        <br><small>250+ effect out-in</small>
+                    </div>
+
+                    <div>
+                        <div class="dummy-img dummy-img1 ma-t-10 ma-b-20" style="height: 120px;"></div>
+                        <p class="dropcap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, pariatur aliquam molestias aspernatur non. Facere, quibusdam, reiciendis, natus laudantium debitis suscipit consequatur voluptatibus mollitia temporibus quia ratione dignissimos magnam provident.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="ct-pagitem">FLAT DESIGN
+                        <br><small>simple - clean - beauty</small>
+                    </div>
+
+                    <div>
+                        <div class="dummy-group ma-b-20">
+                            <div class="dummy-img dummy-img2"></div>
+                            <div class="dummy-img dummy-img3"></div>
+                            <div class="dummy-img dummy-img4"></div>
+                            <div class="dummy-img dummy-img5 dummy-img-end"></div>
+                        </div>
+                        <p class="dropcap">Borem ipsum dolor sit amet, consectetur adipisicing elit. Vel quibusdam perferendis temporibus aspernatur iure. Temporibus, voluptatibus, earum, commodi animi blanditiis modi maxime...</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="ct-pagitem">TRUE TABS
+                        <br><small>no dropdown menu</small>
+                    </div>
+
+                    <h2>Moless accusas digniss</h2>
+                    <p class="dropcap">Upsum dolor sit amet, consectetur adipisicing elit. Nulla, sapiente soluta itaque eum repellat tempora totam unde doloremque nobis. Provident, nisi, libero numquam soluta neque modi nulla ut necessitatibus ullam.</p>
+                    <p>Architecto, sint, quidem nobis veniam adipisci est doloribus debitis pariatur quia corrupti repellat dolores natus...</p>
+                </div>
+            </div>
+            <!-- TAB FLAT HORIZONTAL - end -->
+
+        </div>
+
+    
+    </div>
+    </div>
+    </div>
+    <!-- HIGHTLIGHT SECTION - end
+    ============================================================== -->
+
+
+    
+
+    
+    
+    <!-- Footer - begin
+    ============================================================== -->
+    <div class="footer">
+    <div class="container">
+        
+        <!-- Copyright -->
+        <section class="copyright">
+            <p>&copy; 2014 Thystudio. All Rights Reserved.</p>
+        </section>
+
+    </div>
+    </div>
+    <!-- Footer - end
+    ============================================================== -->
+
+    
+
+
+
+
+    <!-- Script - begin
+    ============================================================== -->
+    <script src="../libs/scripts/jquery-1.11.1.min.js"></script> <!-- jQuery Libary -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script> <!-- Bootstrap plugin -->
+    <script src="../code/codetabs.js"></script> <!-- Codetabs Plugins -->
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+
+            var code = $('.ct').data('codetabs');
+
+            /* Toggle view 3d */
+            $('.toggle3d').on('click', function() {
+                var a       = 'actived',
+                    zone3d  = 'zone-3d',
+                    $el     = $(this),
+                    $show   = $('.zone-show');
+
+                if( $el.hasClass(a) ) {
+                    $el.removeClass(a);
+                    $show.removeClass(zone3d);
+                    code.refresh();
+                }
+                else {
+                    $el.addClass(a);
+                    $show.addClass(zone3d);
+                    code.refresh();
+                }
+
+                return false;
+            });
+
+
+            /* Add class csstransition to html */
+            if( code.is().ts ) $('html').addClass('csstransition');
+        });
+    </script>
+    <!-- Script - end
+    ============================================================== -->
+
+</body>
+</html>
